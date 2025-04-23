@@ -1,0 +1,17 @@
+requests
+ujson
+fastapi
+uvicorn
+py-ulid
+mysqlclient
+sqlalchemy
+alembic
+passlib
+dependency-injector
+bcrypt
+pydantic
+python-jose
+python-multipart
+python-dotenv
+pydantic-settings
+pytest
