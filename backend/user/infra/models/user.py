@@ -2,9 +2,7 @@ from sqlalchemy import DateTime, Index, Integer, String, text
 from sqlalchemy.dialects.mysql import TINYINT
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 import datetime
-
-class Base(DeclarativeBase):
-    pass
+from backend.database import Base
 
 
 class User(Base):

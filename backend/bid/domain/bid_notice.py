@@ -1,7 +1,9 @@
-from pydantic import BaseModel, Field
+from dataclasses import dataclass
 from typing import Optional
+from datetime import datetime
 
-class BidNoticeBody(BaseModel):
+@dataclass
+class BidNotice:
     apl_bss_cntnts: Optional[str] = None  # 적용기준내용
     arslt_appl_doc_rcpt_dt: Optional[str] = None  # 실적신청서접수일시
     arslt_appl_doc_rcpt_mthd_nm: Optional[str] = None  # 실적신청서접수방법명
@@ -15,7 +17,7 @@ class BidNoticeBody(BaseModel):
     bid_ntce_dt: Optional[str] = None  # 입찰공고일시
     bid_ntce_dtl_url: Optional[str] = None  # 입찰공고상세URL
     bid_ntce_nm: Optional[str] = None  # 입찰공고명
-    bid_ntce_no: str  # 입찰공고번호
+    bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_ntce_url: Optional[str] = None  # 입찰공고URL
     bid_prtcpt_fee: Optional[str] = None  # 입찰참가수수료
@@ -116,6 +118,7 @@ class BidNoticeBody(BaseModel):
     spt_dscrpt_doc_url3: Optional[str] = None  # 현장설명서URL3
     spt_dscrpt_doc_url4: Optional[str] = None  # 현장설명서URL4
     spt_dscrpt_doc_url5: Optional[str] = None  # 현장설명서URL5
+    status: Optional[int] = 1
     std_ntce_doc_url: Optional[str] = None  # 표준공고서URL
     subsi_cnstty_indstryty_evl_rt1: Optional[str] = None  # 부공종업종평가비율1
     subsi_cnstty_indstryty_evl_rt2: Optional[str] = None  # 부공종업종평가비율2
@@ -141,3 +144,5 @@ class BidNoticeBody(BaseModel):
     tot_prdprc_num: Optional[str] = None  # 총예가건수
     unty_ntce_no: Optional[str] = None  # 통합공고번호
     vat: Optional[str] = None  # 부가가치세
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
