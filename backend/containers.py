@@ -1,6 +1,6 @@
 from dependency_injector import containers, providers
 
-from backend.bid.application.bid_service import BidNoticeService
+from backend.bid.application.bid_notice_service import BidNoticeService
 from backend.bid.infra.repository.bid_notice_repository import BidNoticeRepository
 from backend.user.application.user_service import UserService
 from backend.user.infra.repository.user_repository import UserRepository

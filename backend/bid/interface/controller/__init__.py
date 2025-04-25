@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from backend.bid.domain.bid_notice import BidNotice
 
 class BidNoticeBody(BaseModel):
     apl_bss_cntnts: Optional[str] = None  # 적용기준내용
@@ -15,7 +16,7 @@ class BidNoticeBody(BaseModel):
     bid_ntce_dt: Optional[str] = None  # 입찰공고일시
     bid_ntce_dtl_url: Optional[str] = None  # 입찰공고상세URL
     bid_ntce_nm: Optional[str] = None  # 입찰공고명
-    bid_ntce_no: str  # 입찰공고번호
+    bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_ntce_url: Optional[str] = None  # 입찰공고URL
     bid_prtcpt_fee: Optional[str] = None  # 입찰참가수수료
@@ -141,3 +142,14 @@ class BidNoticeBody(BaseModel):
     tot_prdprc_num: Optional[str] = None  # 총예가건수
     unty_ntce_no: Optional[str] = None  # 통합공고번호
     vat: Optional[str] = None  # 부가가치세
+
+
+class GetBidNoticeBody(BaseModel):
+    page: int = 1
+    per_page: int = 20
+    body: Optional[BidNoticeBody] = None
+
+
+class GetBidNoticeResponse(BaseModel):
+    total_count: int
+    data: Optional[list[BidNotice]] = None

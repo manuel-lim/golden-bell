@@ -47,13 +47,14 @@ class UserRepository(IUserRepository):
 
             return user_vo
 
-    def get_users(self, page: int, per_page: int) -> tuple[int, list[User]]:
+    def get_users(self, page: int, per_page: int) -> tuple[int, list[UserVo]]:
         with SessionLocal() as session:
             query = session.query(User)
             total_count = query.count()
 
             offset = (page - 1) * per_page
             users = query.limit(per_page).offset(offset).all()
+            users = [User(**row_to_dict(user)) for user in users]
             return total_count, users
 
     def delete(self, user_id: str):

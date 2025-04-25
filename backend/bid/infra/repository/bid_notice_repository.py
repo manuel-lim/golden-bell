@@ -6,7 +6,7 @@ from backend.utils.db_utils import row_to_dict
 
 
 class BidNoticeRepository(IBidNoticeRepository):
-    def get_bid_notices(self, page: int, per_page: int) -> tuple[int, list[BidNoticeVo]]:
+    def get_bid_notices(self, page, per_page, body_data: BidNoticeVo) -> tuple[int, list[BidNoticeVo]]:
         with SessionLocal() as session:
             query = session.query(BidNotice)
             total_count = query.count()
