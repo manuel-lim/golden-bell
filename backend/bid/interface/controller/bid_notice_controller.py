@@ -18,8 +18,6 @@ def get_bid_notices(body_data: Optional[GetBidNoticeBody] = None,
     page = body_data.page
     per_page = body_data.per_page
     bid_notice = BidNoticeVo(**body_data.body.model_dump(exclude_none=True))
-
     total_count, bid_notices = bid_notice_service.get_bid_notices(page, per_page, bid_notice)
-
     return GetBidNoticeResponse(total_count=total_count, data=bid_notices)
 
