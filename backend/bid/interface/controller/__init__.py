@@ -1,147 +1,30 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from backend.bid.domain.bid_notice_construction import BidNotice
+
+from backend.common import BidType
+from backend.bid.domain import BidNotice
+
 
 class BidNoticeBody(BaseModel):
-    apl_bss_cntnts: Optional[str] = None  # 적용기준내용
-    arslt_appl_doc_rcpt_dt: Optional[str] = None  # 실적신청서접수일시
-    arslt_appl_doc_rcpt_mthd_nm: Optional[str] = None  # 실적신청서접수방법명
-    arslt_cmpt_yn: Optional[str] = None  # 실적경쟁여부
-    bdgt_amt: Optional[str] = None  # 예산금액
-    bf_spec_rgst_no: Optional[str] = None  # 사전규격등록번호
+    from_bdgt_amt: Optional[str] = None  # 최소 예산금액
+    to_bdgt_amt: Optional[str] = None  # 최대 예산금액
+
     bid_begin_dt: Optional[str] = None  # 입찰개시일시
     bid_clse_dt: Optional[str] = None  # 입찰마감일시
-    bid_grntymny_paymnt_yn: Optional[str] = None  # 입찰보증금납부여부
+
     bid_methd_nm: Optional[str] = None  # 입찰방식명
     bid_ntce_dt: Optional[str] = None  # 입찰공고일시
-    bid_ntce_dtl_url: Optional[str] = None  # 입찰공고상세URL
+
     bid_ntce_nm: Optional[str] = None  # 입찰공고명
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
-    bid_ntce_ord: Optional[str] = None  # 입찰공고차수
-    bid_ntce_url: Optional[str] = None  # 입찰공고URL
-    bid_prtcpt_fee: Optional[str] = None  # 입찰참가수수료
-    bid_prtcpt_fee_paymnt_yn: Optional[str] = None  # 입찰참가수수료납부여부
-    bid_prtcpt_lmt_yn: Optional[str] = None  # 입찰참가제한여부
-    bid_qlfct_rgst_dt: Optional[str] = None  # 입찰참가자격등록마감일시
-    bid_wgrntee_rcpt_clse_dt: Optional[str] = None  # 입찰보증서접수마감일시
-    brffc_bidprc_permsn_yn: Optional[str] = None  # 지사투찰허용여부
-    chg_dt: Optional[str] = None  # 변경일시
-    chg_ntce_rsn: Optional[str] = None  # 변경공고사유
-    cibl_apl_yn: Optional[str] = None  # 건설산업법적용대상여부
-    cmmn_spldmd_agrmnt_clse_dt: Optional[str] = None  # 공동수급협정마감일시
-    cmmn_spldmd_agrmnt_rcptdoc_methd: Optional[str] = None  # 공동수급협정서접수방식
-    cmmn_spldmd_cnum: Optional[str] = None  # 공동수급업체수
-    cmmn_spldmd_corp_rgn_lmt_yn: Optional[str] = None  # 공동수급업체지역제한여부
-    cmmn_spldmd_methd_cd: Optional[str] = None  # 공동수급방식코드
-    cmmn_spldmd_methd_nm: Optional[str] = None  # 공동수급방식명
-    cnstrtn_ablty_evl_amt_list: Optional[str] = None  # 시공능력평가금액목록
-    cnstrtsite_rgn_nm: Optional[str] = None  # 공사현장지역명
-    cnstty_accot_shre_rate_list: Optional[str] = None  # 공종별지분율목록
-    cntrct_cncls_mthd_nm: Optional[str] = None  # 계약체결방법명
-    contrctrcnstrtn_govsply_mtrl_amt: Optional[str] = None  # 도급자설치관급자재금액
-    crdtr_nm: Optional[str] = None  # 채권자명
-    dcmtg_oprtn_dt: Optional[str] = None  # 설명회실시일시
-    dcmtg_oprtn_plce: Optional[str] = None  # 설명회실시장소
-    dminstt_cd: Optional[str] = None  # 수요기관코드
-    dminstt_nm: Optional[str] = None  # 수요기관명
-    dminstt_ofcl_email_adrs: Optional[str] = None  # 수요기관담당자이메일주소
-    drwt_prdprc_num: Optional[str] = None  # 추첨예가건수
-    dsgnt_cmpt_yn: Optional[str] = None  # 지명경쟁여부
-    dtls_bid_yn: Optional[str] = None  # 내역입찰여부
-    exctv_nm: Optional[str] = None  # 집행관명
-    govcnstrtn_govsply_mtrl_amt: Optional[str] = None  # 관급자설치관급자재금액
-    govsply_amt: Optional[str] = None  # 관급금액
-    incntv_rgn_nm1: Optional[str] = None  # 가산지역명1
-    incntv_rgn_nm2: Optional[str] = None  # 가산지역명2
-    incntv_rgn_nm3: Optional[str] = None  # 가산지역명3
-    incntv_rgn_nm4: Optional[str] = None  # 가산지역명4
-    indstryty_evl_rt: Optional[str] = None  # 업종평가비율
-    indstryty_lmt_yn: Optional[str] = None  # 업종제한여부
-    indstryty_mfrc_fld_evl_yn: Optional[str] = None  # 주력분야평가여부
-    induty_vat: Optional[str] = None  # 주공종부가가치세
-    intrbid_yn: Optional[str] = None  # 국제입찰여부
-    jntcontrct_duty_rgn_nm1: Optional[str] = None  # 공동도급의무지역명1
-    jntcontrct_duty_rgn_nm2: Optional[str] = None  # 공동도급의무지역명2
-    jntcontrct_duty_rgn_nm3: Optional[str] = None  # 공동도급의무지역명3
-    main_cnstty_cnstwk_prearng_amt: Optional[str] = None  # 주공종공사예정금액
-    main_cnstty_nm: Optional[str] = None  # 주공종명
-    main_cnstty_presmpt_prce: Optional[str] = None  # 주공종추정가격
-    mtlty_advc_psbl_yn: Optional[str] = None  # 상호시장진출허용여부
-    mtlty_advc_psbl_yn_cnstwk_nm: Optional[str] = None  # 건설산업법적용대상공사명
-    ntce_dscrpt_yn: Optional[str] = None  # 공고설명여부
-    ntce_instt_cd: Optional[str] = None  # 공고기관코드
+
     ntce_instt_nm: Optional[str] = None  # 공고기관명
-    ntce_instt_ofcl_email_adrs: Optional[str] = None  # 공고기관담당자이메일주소
-    ntce_instt_ofcl_nm: Optional[str] = None  # 공고기관담당자명
-    ntce_instt_ofcl_tel_no: Optional[str] = None  # 공고기관담당자전화번호
-    ntce_kind_nm: Optional[str] = None  # 공고종류명
-    ntce_spec_doc_url1: Optional[str] = None  # 공고규격서URL1
-    ntce_spec_doc_url10: Optional[str] = None  # 공고규격서URL10
-    ntce_spec_doc_url2: Optional[str] = None  # 공고규격서URL2
-    ntce_spec_doc_url3: Optional[str] = None  # 공고규격서URL3
-    ntce_spec_doc_url4: Optional[str] = None  # 공고규격서URL4
-    ntce_spec_doc_url5: Optional[str] = None  # 공고규격서URL5
-    ntce_spec_doc_url6: Optional[str] = None  # 공고규격서URL6
-    ntce_spec_doc_url7: Optional[str] = None  # 공고규격서URL7
-    ntce_spec_doc_url8: Optional[str] = None  # 공고규격서URL8
-    ntce_spec_doc_url9: Optional[str] = None  # 공고규격서URL9
-    ntce_spec_file_nm1: Optional[str] = None  # 공고규격파일명1
-    ntce_spec_file_nm10: Optional[str] = None  # 공고규격파일명10
-    ntce_spec_file_nm2: Optional[str] = None  # 공고규격파일명2
-    ntce_spec_file_nm3: Optional[str] = None  # 공고규격파일명3
-    ntce_spec_file_nm4: Optional[str] = None  # 공고규격파일명4
-    ntce_spec_file_nm5: Optional[str] = None  # 공고규격파일명5
-    ntce_spec_file_nm6: Optional[str] = None  # 공고규격파일명6
-    ntce_spec_file_nm7: Optional[str] = None  # 공고규격파일명7
-    ntce_spec_file_nm8: Optional[str] = None  # 공고규격파일명8
-    ntce_spec_file_nm9: Optional[str] = None  # 공고규격파일명9
     openg_dt: Optional[str] = None  # 개찰일시
-    openg_plce: Optional[str] = None  # 개찰장소
-    order_plan_unty_no: Optional[str] = None  # 발주계획통합번호
-    pq_appl_doc_rcpt_dt: Optional[str] = None  # PQ신청서접수일시
-    pq_appl_doc_rcpt_mthd_nm: Optional[str] = None  # PQ신청서접수방법명
-    pq_eval_yn: Optional[str] = None  # PQ심사여부
-    prearng_prce_dcsn_mthd_nm: Optional[str] = None  # 예정가격결정방법명
     presmpt_prce: Optional[str] = None  # 추정가격
-    rbid_openg_dt: Optional[str] = None  # 재입찰개찰일시
-    rbid_permsn_yn: Optional[str] = None  # 재입찰허용여부
-    re_ntce_yn: Optional[str] = None  # 재공고여부
-    ref_no: Optional[str] = None  # 참조번호
-    rgn_duty_jntcontrct_rt: Optional[str] = None  # 지역의무공동도급비율
-    rgn_duty_jntcontrct_yn: Optional[str] = None  # 지역의무공동도급여부
     rgst_dt: Optional[str] = None  # 등록일시
-    rgst_ty_nm: Optional[str] = None  # 등록유형명
-    rsrvtn_prce_re_mkng_mthd_nm: Optional[str] = None  # 예비가격재작성방법명
-    spt_dscrpt_doc_url1: Optional[str] = None  # 현장설명서URL1
-    spt_dscrpt_doc_url2: Optional[str] = None  # 현장설명서URL2
-    spt_dscrpt_doc_url3: Optional[str] = None  # 현장설명서URL3
-    spt_dscrpt_doc_url4: Optional[str] = None  # 현장설명서URL4
-    spt_dscrpt_doc_url5: Optional[str] = None  # 현장설명서URL5
-    std_ntce_doc_url: Optional[str] = None  # 표준공고서URL
-    subsi_cnstty_indstryty_evl_rt1: Optional[str] = None  # 부공종업종평가비율1
-    subsi_cnstty_indstryty_evl_rt2: Optional[str] = None  # 부공종업종평가비율2
-    subsi_cnstty_indstryty_evl_rt3: Optional[str] = None  # 부공종업종평가비율3
-    subsi_cnstty_indstryty_evl_rt4: Optional[str] = None  # 부공종업종평가비율4
-    subsi_cnstty_indstryty_evl_rt5: Optional[str] = None  # 부공종업종평가비율5
-    subsi_cnstty_indstryty_evl_rt6: Optional[str] = None  # 부공종업종평가비율6
-    subsi_cnstty_indstryty_evl_rt7: Optional[str] = None  # 부공종업종평가비율7
-    subsi_cnstty_indstryty_evl_rt8: Optional[str] = None  # 부공종업종평가비율8
-    subsi_cnstty_indstryty_evl_rt9: Optional[str] = None  # 부공종업종평가비율9
-    subsi_cnstty_nm1: Optional[str] = None  # 부대공종명1
-    subsi_cnstty_nm2: Optional[str] = None  # 부대공종명2
-    subsi_cnstty_nm3: Optional[str] = None  # 부대공종명3
-    subsi_cnstty_nm4: Optional[str] = None  # 부대공종명4
-    subsi_cnstty_nm5: Optional[str] = None  # 부대공종명5
-    subsi_cnstty_nm6: Optional[str] = None  # 부대공종명6
-    subsi_cnstty_nm7: Optional[str] = None  # 부대공종명7
-    subsi_cnstty_nm8: Optional[str] = None  # 부대공종명8
-    subsi_cnstty_nm9: Optional[str] = None  # 부대공종명9
-    sucsfbid_lwlt_rate: Optional[str] = None  # 낙찰하한율
-    sucsfbid_mthd_cd: Optional[str] = None  # 낙찰방법코드
-    sucsfbid_mthd_nm: Optional[str] = None  # 낙찰방법명
-    tot_prdprc_num: Optional[str] = None  # 총예가건수
     unty_ntce_no: Optional[str] = None  # 통합공고번호
-    vat: Optional[str] = None  # 부가가치세
+
+    bid_type: BidType = None  # 종류. 건설 / 외자 / 용역 / 물품
 
 
 class GetBidNoticeBody(BaseModel):

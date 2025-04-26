@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-from backend.bid.domain.bid_notice_construction import BidNoticeConstruction as BidNoticeConstructionVo
 
 class IBidNoticeRepository(metaclass=ABCMeta):
     # @abstractmethod
@@ -7,5 +6,5 @@ class IBidNoticeRepository(metaclass=ABCMeta):
     #     raise NotImplementedError
 
     @abstractmethod
-    def get_bid_notices(self, page, per_page, body_data: BidNoticeConstructionVo) -> tuple[int, list[BidNoticeConstructionVo]]:
+    def get_bid_notices(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
         raise NotImplementedError

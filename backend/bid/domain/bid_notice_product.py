@@ -1,9 +1,11 @@
 from dataclasses import dataclass
 from typing import Optional
 
+from backend.bid.domain import BidNotice
+
 
 @dataclass
-class BidNoticeProduct:
+class BidNoticeProduct(BidNotice):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     re_ntce_yn: Optional[str] = None  # 재공고여부
