@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from backend.bid.domain.bid_notice import BidNotice
+from backend.bid.domain.bid_notice_construction import BidNotice
 
 class BidNoticeBody(BaseModel):
     apl_bss_cntnts: Optional[str] = None  # 적용기준내용
