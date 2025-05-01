@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import Optional
 from backend.bid.domain import Bid
 
+
+# 입찰가격산식A정보 조회
 @dataclass
 class BidAInfo(Bid):
     bid_ntce_no: Optional[str] = None

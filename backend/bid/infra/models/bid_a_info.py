@@ -3,6 +3,7 @@ from sqlalchemy import String
 from backend.database import Base
 
 
+# 입찰가격산식A정보 조회
 class BidAInfo(Base):
     __tablename__ = 'bid_a_info'
 
