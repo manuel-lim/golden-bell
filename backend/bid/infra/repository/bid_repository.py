@@ -1,4 +1,4 @@
-from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
+from backend.bid.domain.repository.bid_repository import IBidRepository
 from backend.common import BidType
 from backend.database import SessionLocal
 from backend.bid.infra.models.bid_construction import BidConstruction
@@ -10,7 +10,7 @@ from backend.bid.domain.bid_construction import BidConstruction as BidConstructi
 from backend.utils.db_utils import row_to_dict
 
 
-class BidRepository(IBidNoticeRepository):
+class BidRepository(IBidRepository):
     def get_bid_list(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
         with SessionLocal() as session:
             bid_type = body_data.get('bid_type')

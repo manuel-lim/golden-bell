@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class IBidNoticeRepository(metaclass=ABCMeta):
+class IBidRepository(metaclass=ABCMeta):
     # @abstractmethod
     # def save(self, bid_notice: BidNotice):
     #     raise NotImplementedError

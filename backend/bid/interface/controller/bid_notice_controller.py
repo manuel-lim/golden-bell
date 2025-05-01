@@ -3,7 +3,7 @@ from typing import Optional
 from dependency_injector.wiring import inject, Provide
 from fastapi import APIRouter, Depends
 
-from backend.bid.application.bid_notice_service import BidNoticeService
+from backend.bid.application.bid_service import BidNoticeService
 from backend.bid.interface.controller import GetBidNoticeBody, GetBidNoticeResponse
 from backend.containers import Container
 from backend.bid.domain.bid_construction import BidNotice as BidNoticeVo
