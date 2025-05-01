@@ -1,9 +1,12 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import String, Text
+
 from backend.database import Base
 
-class BidProcurementItem(Base):
-    __tablename__ = 'bid_procurement_item'
+
+# 물품 구매대상물품 정보 조회
+class BidPurchaseItemInfo(Base):
+    __tablename__ = 'bid_purchase_item_info'
 
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')

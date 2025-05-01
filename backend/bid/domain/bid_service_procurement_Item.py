@@ -1,8 +1,11 @@
 from typing import Optional
 from backend.bid.domain import Bid
+from dataclasses import dataclass
 
 
-class BidProcurementItem(Bid):
+# 용역 구매대상물품 정보 조회
+@dataclass
+class BidServiceProcurementItem(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호
