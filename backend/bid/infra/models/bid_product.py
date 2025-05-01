@@ -3,8 +3,8 @@ from sqlalchemy.types import String
 from backend.database import Base
 
 
-class BidNoticeProduct(Base):
-    __tablename__ = 'bid_notice_product'
+class BidProduct(Base):
+    __tablename__ = 'bid_product'
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     re_ntce_yn = mapped_column(String(1), comment='재공고여부')

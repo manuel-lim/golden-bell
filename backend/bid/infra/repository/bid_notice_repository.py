@@ -1,27 +1,27 @@
 from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
 from backend.common import BidType
 from backend.database import SessionLocal
-from backend.bid.infra.models.bid_notice_construction import BidNoticeConstruction
-from backend.bid.infra.models.bid_notice_outsourcing import BidNoticeOutsourcing
-from backend.bid.infra.models.bid_notice_imported_goods import BidNoticeImportedGoods
-from backend.bid.infra.models.bid_notice_product import BidNoticeProduct
+from backend.bid.infra.models.bid_construction import BidConstruction
+from backend.bid.infra.models.bid_outsourcing import BidOutsourcing
+from backend.bid.infra.models.bid_imported_goods import BidImportedGoods
+from backend.bid.infra.models.bid_product import BidProduct
 
-from backend.bid.domain.bid_notice_construction import BidNoticeConstruction as BidNoticeConstructionVo
+from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
 from backend.utils.db_utils import row_to_dict
 
 
-class BidNoticeRepository(IBidNoticeRepository):
-    def get_bid_notices(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
+class BidRepository(IBidNoticeRepository):
+    def get_bid_list(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
         with SessionLocal() as session:
             bid_type = body_data.get('bid_type')
 
-            base = BidNoticeConstruction
+            base = BidConstruction
             if bid_type is BidType.OUTSOURCING:
-                base = BidNoticeOutsourcing
+                base = BidOutsourcing
             elif bid_type is BidType.IMPORTED:
-                base = BidNoticeImportedGoods
+                base = BidImportedGoods
             elif bid_type is BidType.PRODUCT:
-                base = BidNoticeProduct
+                base = BidProduct
 
             query = session.query(base)
             total_count = query.count()
@@ -35,8 +35,8 @@ class BidNoticeRepository(IBidNoticeRepository):
 
             # 금액
             if from_bdgt_amt and to_bdgt_amt:
-                if base is BidNoticeConstruction:
-                    query = query.where(from_bdgt_amt <= BidNoticeConstruction.bdgt_amt <= to_bdgt_amt)
+                if base is BidConstruction:
+                    query = query.where(from_bdgt_amt <= BidConstruction.bdgt_amt <= to_bdgt_amt)
                 else:
                     query = query.where(from_bdgt_amt <= int(base.asign_bdgt_amt) <= to_bdgt_amt)
 
