@@ -1,5 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
@@ -11,6 +11,7 @@ from backend.database import Base
 class BidServiceProcurementItem(Base):
     __tablename__ = 'bid_service_procurement_item'
 
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
@@ -11,7 +11,7 @@ from backend.database import Base
 class BidAttachedFile(Base):
     __tablename__ = 'bid_attached_file'
 
-    id = mapped_column(primary_key=True, autoincrement=True)
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     iss_dt = mapped_column(String(19), comment='교부일시')

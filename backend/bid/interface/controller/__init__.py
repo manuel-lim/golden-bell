@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 from backend.common import BidType
-from backend.bid.domain import BidNotice
+from backend.bid.domain import Bid
 
 
 class BidNoticeBody(BaseModel):
@@ -35,4 +35,4 @@ class GetBidNoticeBody(BaseModel):
 
 class GetBidNoticeResponse(BaseModel):
     total_count: int
-    data: Optional[list[BidNotice]] = None
+    data: Optional[list[Bid]] = None

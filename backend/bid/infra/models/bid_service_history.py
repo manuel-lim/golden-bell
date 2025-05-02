@@ -1,5 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
@@ -14,6 +14,7 @@ from backend.database import Base
 class BidServiceHistory(Base):
     __tablename__ = 'bid_service_history'
 
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bsns_div_nm = mapped_column(String(30), comment='업무구분명')
     chg_data_div_nm = mapped_column(String(30), comment='변경데이터구분명')
     chg_dt = mapped_column(String(19), comment='변경일시')
