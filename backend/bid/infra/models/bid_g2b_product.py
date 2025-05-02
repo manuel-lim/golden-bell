@@ -3,7 +3,10 @@ from sqlalchemy import String, Text
 from backend.database import Base
 
 
-# 나라장터 물품부분의 입찰공고정보
+"""
+검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터의 
+입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함
+"""
 class BidG2BProduct(Base):
     __tablename__ = 'bid_g2b_product'
 
@@ -101,3 +104,4 @@ class BidG2BProduct(Base):
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')
     vat = mapped_column(String(25), comment='부가가치세')
     induty_vat = mapped_column(String(25), comment='주공종부가가치세')
+    bid_wgrntee_rcpt_clse_dt = mapped_column(String(25), comment='')

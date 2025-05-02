@@ -1,12 +1,14 @@
-
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
-# 나라장터 용역부분의 입찰공고정보
+"""
+검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 용역부분의 입찰공고정보를 조회함
+"""
 class BidG2BService(Base):
     __tablename__ = 'bid_g2b_service'
 
+    id = mapped_column('id', Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     re_ntce_yn = mapped_column(String(1), comment='재공고여부')
