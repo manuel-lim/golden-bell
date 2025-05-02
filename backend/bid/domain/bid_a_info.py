@@ -2,7 +2,11 @@ from dataclasses import dataclass
 from typing import Optional
 from backend.bid.domain import Bid
 
-
+"""
+검색조건에 공고게시일시와 입찰공고번호를 입력하여 입찰가격산식 A값 적용 
+공고의 합산항목인 국민연금보험료, 국민건강보험료, 퇴직공제부금비, 노인장기요양보험료, 
+산업안전보건관리비, 안전관리비, 품질관리비, 품질관리비 적용대상여부등 입찰가격산식A정보 조회 ( 복수예가는 A값 공개 시 제공)
+"""
 # 입찰가격산식A정보 조회
 @dataclass
 class BidAInfo(Bid):

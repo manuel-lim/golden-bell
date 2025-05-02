@@ -1,12 +1,17 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String
+from sqlalchemy import String, Integer
 from backend.database import Base
 
 
-# 입찰가격산식A정보 조회
+"""
+검색조건에 공고게시일시와 입찰공고번호를 입력하여 입찰가격산식 A값 적용 
+공고의 합산항목인 국민연금보험료, 국민건강보험료, 퇴직공제부금비, 노인장기요양보험료, 
+산업안전보건관리비, 안전관리비, 품질관리비, 품질관리비 적용대상여부등 입찰가격산식A정보 조회 ( 복수예가는 A값 공개 시 제공)
+"""
 class BidAInfo(Base):
     __tablename__ = 'bid_a_info'
 
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String, comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String, comment='입찰공고차수')
     sfty_mngcst = mapped_column(String, comment='안전관리비')
