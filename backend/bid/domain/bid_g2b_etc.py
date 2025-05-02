@@ -1,9 +1,13 @@
+from dataclasses import dataclass
 from typing import Optional
-from pydantic import BaseModel
-
 from backend.bid.domain import Bid
 
-class BidEtc(Bid):
+
+"""
+나라장터검색조건에 의한 입찰공고 기타조회
+"""
+@dataclass
+class BidG2BEtc(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     rgst_ty_nm: Optional[str] = None  # 등록유형명

@@ -1,11 +1,16 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy.orm import mapped_column
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
+"""
+검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 
+예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등 물품의 기초금액정보 조회
+"""
 class BidBasicAmount(Base):
     __tablename__ = 'bid_basic_amount'
 
+    id = mapped_column(Integer, primary_key=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')

@@ -8,10 +8,10 @@ from backend.database import Base
 낙찰자결정방법이 [경쟁적 대화에 의한 낙찰자 선정 낙찰방법] 일경우 검색조건에 등록일시, 입찰공고번호, 교부일시를 입력하여 혁신장터에서 교부된 최종제안요청서 첨부파일정보를 조회함
 """
 
-
 class BidAttachedFile(Base):
     __tablename__ = 'bid_attached_file'
 
+    id = mapped_column(primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     iss_dt = mapped_column(String(19), comment='교부일시')

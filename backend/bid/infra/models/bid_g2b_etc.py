@@ -1,11 +1,15 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy import String, Text
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
-class BidEtc(Base):
-    __tablename__ = 'bid_etc'
+"""
+나라장터검색조건에 의한 입찰공고 기타조회
+"""
+class BidG2BEtc(Base):
+    __tablename__ = 'bid_g2b_etc'
 
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     rgst_ty_nm = mapped_column(String(100), comment='등록유형명')
