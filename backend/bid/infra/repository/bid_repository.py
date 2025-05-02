@@ -3,7 +3,7 @@ from backend.common import BidType
 from backend.database import SessionLocal
 from backend.bid.infra.models.bid_construction import BidConstruction
 from backend.bid.infra.models.bid_service import BidOutsourcing
-from backend.bid.infra.models.bid_imported_product import BidImportedGoods
+from backend.bid.infra.models.bid_foreign_procurement import BidImportedGoods
 from backend.bid.infra.models.bid_product import BidProduct
 
 from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
