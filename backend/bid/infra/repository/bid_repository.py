@@ -2,7 +2,7 @@ from backend.bid.domain.repository.bid_repository import IBidRepository
 from backend.common import BidType
 from backend.database import SessionLocal
 from backend.bid.infra.models.bid_construction import BidConstruction
-from backend.bid.infra.models.bid_outsourcing import BidOutsourcing
+from backend.bid.infra.models.bid_service import BidOutsourcing
 from backend.bid.infra.models.bid_imported_product import BidImportedGoods
 from backend.bid.infra.models.bid_product import BidProduct
 

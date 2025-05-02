@@ -1,11 +1,17 @@
-from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy.types import String
+from sqlalchemy import Column
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.types import String, Integer
 from backend.database import Base
 
 
-class BidOutsourcing(Base):
-    __tablename__ = 'bid_outsourcing'
+"""
+검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 
+나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 용역부분의 입찰공고정보를 조회함
+"""
+class BidService(Base):
+    __tablename__ = 'bid_service'
 
+    id = Column(Integer, primary_key=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')  # 입찰공고번호
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')  # 입찰공고차수
     re_ntce_yn = mapped_column(String(1), comment='재공고여부')  # 재공고여부
