@@ -3,7 +3,10 @@ from sqlalchemy import String, Text
 from backend.database import Base
 
 
-# 공사기초금액조회
+"""
+검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 
+예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 공사의 기초금액정보 조회
+"""
 class BidBasePrice(Base):
     __tablename__ = 'bid_base_price'
 
