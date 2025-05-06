@@ -1,6 +1,6 @@
 from sqlalchemy import Column
 from sqlalchemy.orm import DeclarativeBase, mapped_column
-from sqlalchemy.types import String, Integer
+from sqlalchemy.types import String, Integer, Text
 from backend.database import Base
 
 
@@ -76,7 +76,7 @@ class BidProduct(Base):
     crdtr_nm = mapped_column(String(200), comment='채권자명')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
-    prdct_spec_nm = mapped_column(String(500), comment='물품규격명')
+    prdct_spec_nm = mapped_column(Text, comment='물품규격명')
     prdct_qty = mapped_column(String(25), comment='물품수량')
     prdct_unit = mapped_column(String(30), comment='물품단위')
     prdct_uprc = mapped_column(String(25), comment='물품단가')
@@ -84,7 +84,7 @@ class BidProduct(Base):
     dlvr_daynum = mapped_column(String(5), comment='납품일수')
     dlvry_cndtn_nm = mapped_column(String(200), comment='인도조건명')
     purchs_obj_prdct_list = mapped_column(String(4000), comment='구매대상물품목록')
-    unty_ntce_no = mapped_column(String(11), comment='통합공고번호')
+    unty_ntce_no = mapped_column(String(50), comment='통합공고번호')
     cmmn_spldmd_methd_cd = mapped_column(String(15), comment='공동수급방식코드')
     cmmn_spldmd_methd_nm = mapped_column(String(100), comment='공동수급방식명')
     std_ntce_doc_url = mapped_column(String(256), comment='표준공고서URL')
@@ -96,7 +96,7 @@ class BidProduct(Base):
     order_plan_unty_no = mapped_column(String(35), comment='발주계획통합번호')
     sucsfbid_lwlt_rate = mapped_column(String(22), comment='낙찰하한율')
     rgst_dt = mapped_column(String(19), comment='등록일시')
-    bf_spec_rgst_no = mapped_column(String(10), comment='사전규격등록번호')
+    bf_spec_rgst_no = mapped_column(String(50), comment='사전규격등록번호')
     info_biz_yn = mapped_column(String(1), comment='정보화사업여부')
     sucsfbid_mthd_cd = mapped_column(String(9), comment='낙찰방법코드')
     sucsfbid_mthd_nm = mapped_column(String(200), comment='낙찰방법명')
@@ -107,3 +107,6 @@ class BidProduct(Base):
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')
     vat = mapped_column(String(25), comment='부가가치세')
     induty_vat = mapped_column(String(25), comment='주공종부가가치세')
+    bid_wgrntee_rcpt_clse_dt = mapped_column(String(50), comment='입찰보증서접수마감일시')
+    rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
+    rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')

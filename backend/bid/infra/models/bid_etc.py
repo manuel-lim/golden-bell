@@ -38,7 +38,7 @@ class BidEtc(Base):
     bid_ntce_url = mapped_column(Text, comment='입찰공고URL')
     bid_prtcpt_fee = mapped_column(String(21), comment='입찰참가수수료')
     bid_prtcpt_fee_paymnt_yn = mapped_column(String(30), comment='입찰보증금납부대상여부')
-    unty_ntce_no = mapped_column(String(11), comment='통합공고번호')
+    unty_ntce_no = mapped_column(String(50), comment='통합공고번호')
     cmmn_spldmd_yn = mapped_column(String(1), comment='공동수급여부')
     bid_qlfct_rgst_cntnts = mapped_column(Text, comment='입찰참가자격내용')
     rgst_dt = mapped_column(String(19), comment='등록일시')

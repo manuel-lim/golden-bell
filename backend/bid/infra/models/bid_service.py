@@ -87,7 +87,7 @@ class BidService(Base):
     prdct_clsfc_lmt_yn = mapped_column(String(1), comment='물품분류제한여부')  # 물품분류제한여부
     mnfct_yn = mapped_column(String(1), comment='제조여부')  # 제조여부
     purchs_obj_prdct_list = mapped_column(String(4000), comment='구매대상물품목록')  # 구매대상물품목록
-    unty_ntce_no = mapped_column(String(11), comment='통합공고번호')  # 통합공고번호
+    unty_ntce_no = mapped_column(String(50), comment='통합공고번호')  # 통합공고번호
     cmmn_spldmd_methd_cd = mapped_column(String(15), comment='공동수급방식코드')  # 공동수급방식코드
     cmmn_spldmd_methd_nm = mapped_column(String(100), comment='공동수급구성방식명')  # 공동수급구성방식명
     std_ntce_doc_url = mapped_column(String(256), comment='표준공고서URL')  # 표준공고서URL
@@ -103,7 +103,7 @@ class BidService(Base):
     order_plan_unty_no = mapped_column(String(35), comment='발주계획통합번호')  # 발주계획통합번호
     sucsfbid_lwlt_rate = mapped_column(String(22), comment='낙찰하한율')  # 낙찰하한율
     rgst_dt = mapped_column(String(19), comment='등록일시')  # 등록일시
-    bf_spec_rgst_no = mapped_column(String(10), comment='사전규격등록번호')  # 사전규격등록번호
+    bf_spec_rgst_no = mapped_column(String(50), comment='사전규격등록번호')  # 사전규격등록번호
     info_biz_yn = mapped_column(String(1), comment='정보화사업여부')  # 정보화사업여부
     sucsfbid_mthd_cd = mapped_column(String(9), comment='낙찰방법코드')  # 낙찰방법코드
     sucsfbid_mthd_nm = mapped_column(String(200), comment='낙찰방법명')  # 낙찰방법명
@@ -116,3 +116,9 @@ class BidService(Base):
     induty_vat = mapped_column(String(25), comment='주공종부가가치세')  # 주공종부가가치세
     rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
     rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')
+    pub_prcrmnt_lrg_clsfc_nm = mapped_column(String(100), comment='공공조달대분류명')
+    pub_prcrmnt_mid_clsfc_nm = mapped_column(String(100), comment='공공조달중분류명')
+    pub_prcrmnt_clsfc_no = mapped_column(String(30), comment='공공조달분류번호')
+    pub_prcrmnt_clsfc_nm = mapped_column(String(100), comment='공공조달분류명')
+
+
