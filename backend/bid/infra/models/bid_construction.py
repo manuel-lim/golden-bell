@@ -150,3 +150,5 @@ class BidConstruction(Base):
     induty_vat = mapped_column(String(25), comment='주공종부가가치세')
     indstryty_mfrc_fld_evl_yn = mapped_column(String(1), comment='주력분야평가여부')
     bid_wgrntee_rcpt_clse_dt = mapped_column(String(19), comment='입찰보증서접수마감일시')
+    rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
+    rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')

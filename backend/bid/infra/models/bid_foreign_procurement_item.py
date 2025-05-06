@@ -28,7 +28,7 @@ class BidForeignProcurementItem(Base):
     dlvry_cndtn_nm = mapped_column(String(50), comment='인도조건명')
     prdct_clsfc_no = mapped_column(String(50), comment='물품분류번호')
     prdct_clsfc_no_nm = mapped_column(String(50), comment='물품분류명')
-    prdct_spec_nm = mapped_column(String(50), comment='규격명')
+    prdct_spec_nm = mapped_column(String(400), comment='규격명')
     uprc = mapped_column(String(50), comment='단가')
     dlvr_tmlmt_dt = mapped_column(String(50), comment='납기일자')
     dlvr_daynum = mapped_column(String(50), comment='납기일수')

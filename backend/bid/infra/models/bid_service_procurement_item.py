@@ -22,7 +22,7 @@ class BidServiceProcurementItem(Base):
     prdct_clsfc_no_nm = mapped_column(String(200), comment='품명')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
-    prdct_spec_nm = mapped_column(String(200), comment='물품규격명')
+    prdct_spec_nm = mapped_column(String(400), comment='물품규격명')
     qty = mapped_column(String(18), comment='수량')
     unit = mapped_column(String(30), comment='단위')
     uprc = mapped_column(String(18), comment='단가')

@@ -75,7 +75,7 @@ class BidG2BForeignProcurement(Base):
     prdct_sno = mapped_column(String(6), comment='물품순번')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
-    prdct_spec_nm = mapped_column(String(200), comment='물품규격명')
+    prdct_spec_nm = mapped_column(String(400), comment='물품규격명')
     prdct_qty = mapped_column(String(25), comment='물품수량')
     prdct_unit = mapped_column(String(30), comment='물품단위')
     prdct_uprc = mapped_column(String(25), comment='물품단가')
@@ -103,3 +103,4 @@ class BidG2BForeignProcurement(Base):
     indstryty_lmt_yn = mapped_column(String(1), comment='업종제한여부')
     chg_ntce_rsn = mapped_column(Text, comment='변경공고사유')
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')
+    bid_wgrntee_rcpt_clse_dt = mapped_column(String(25), comment='')

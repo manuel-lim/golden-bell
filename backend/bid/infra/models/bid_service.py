@@ -114,3 +114,5 @@ class BidService(Base):
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')  # 재입찰개찰일시
     vat = mapped_column(String(25), comment='부가가치세')  # 부가가치세
     induty_vat = mapped_column(String(25), comment='주공종부가가치세')  # 주공종부가가치세
+    rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
+    rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')

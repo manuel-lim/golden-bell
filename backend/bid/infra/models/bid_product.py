@@ -76,7 +76,7 @@ class BidProduct(Base):
     crdtr_nm = mapped_column(String(200), comment='채권자명')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
-    prdct_spec_nm = mapped_column(String(200), comment='물품규격명')
+    prdct_spec_nm = mapped_column(String(500), comment='물품규격명')
     prdct_qty = mapped_column(String(25), comment='물품수량')
     prdct_unit = mapped_column(String(30), comment='물품단위')
     prdct_uprc = mapped_column(String(25), comment='물품단가')
