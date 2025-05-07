@@ -12,7 +12,7 @@ class BidMainIndustry(Base):
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
-    bid_ntce_dt = mapped_column(String(19), comment='입찰공고일시')
+    bid_ntce_dt = mapped_column(String(30), comment='입찰공고일시')
     cibl_apl_yn = mapped_column(String(1), comment='건산법적용여부')
     cnstrt_wkara_mtlty_advc_psbl_yn = mapped_column(String(1), comment='건설업역상호진출가능여부')
     cnstrt_wkrar_div_cd = mapped_column(String(9), comment='건설업역구분코드')

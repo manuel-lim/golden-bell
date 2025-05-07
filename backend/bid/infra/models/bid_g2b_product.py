@@ -17,7 +17,7 @@ class BidG2BProduct(Base):
     rgst_ty_nm = mapped_column(String(100), comment='등록유형명')
     ntce_kind_nm = mapped_column(String(100), comment='공고종류명')
     intrbid_yn = mapped_column(String(1), comment='국제입찰여부')
-    bid_ntce_dt = mapped_column(String(19), comment='입찰공고일시')
+    bid_ntce_dt = mapped_column(String(30), comment='입찰공고일시')
     ref_no = mapped_column(String(105), comment='참조번호')
     bid_ntce_nm = mapped_column(String(100), comment='입찰공고명')
     ntce_instt_cd = mapped_column(String(7), comment='공고기관코드')
