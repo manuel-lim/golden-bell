@@ -2,7 +2,7 @@ from typing import Optional
 
 from dependency_injector.wiring import inject
 from fastapi import HTTPException, status
-from backend.bid.domain.repository.bid_repository import IBidRepository
+from backend.bid.domain.repository.bid_notice_repository import IBidRepository
 from backend.bid.domain.bid_construction import BidConstruction as BidNoticeConstructionVo
 
 class BidNoticeService:

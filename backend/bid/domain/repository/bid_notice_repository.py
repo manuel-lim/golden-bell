@@ -1,10 +1,10 @@
 from abc import ABCMeta, abstractmethod
 
-class IBidRepository(metaclass=ABCMeta):
+class IBidNoticeRepository(metaclass=ABCMeta):
     # @abstractmethod
     # def save(self, bid_notice: BidNotice):
     #     raise NotImplementedError
 
     @abstractmethod
-    def get_bid_list(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
+    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
         raise NotImplementedError
