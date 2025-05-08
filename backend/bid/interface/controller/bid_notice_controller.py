@@ -4,20 +4,20 @@ from dependency_injector.wiring import inject, Provide
 from fastapi import APIRouter, Depends
 
 from backend.bid.application.bid_notice_service import BidNoticeService
-from backend.bid.interface.controller import GetBidNoticeBody, GetBidNoticeResponse
+from backend.bid.interface.controller import BidNoticeBody, GetBidNoticeResponse, BidNoticeBody, GetBidNoticeConstructionResponse
 from backend.containers import Container
 from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
-
+from backend.utils import props
 
 router = APIRouter(prefix='/bid_notice')
 
-@router.post('/list')
+@router.get('/list')
 @inject
-def get_bid_notices(body_data: Optional[GetBidNoticeBody] = None,
-                    bid_notice_service: BidNoticeService = Depends(Provide[Container.bid_notice_service])) -> GetBidNoticeResponse:
-    page = body_data.page
-    per_page = body_data.per_page
-    bid_notice = BidConstructionVo(**body_data.body.model_dump(exclude_none=True))
-    total_count, bid_notices = bid_notice_service.get_bid_notices(page, per_page, bid_notice)
-    return GetBidNoticeResponse(total_count=total_count, data=bid_notices)
+def get_bid_notices(
+        body_data: Optional[BidNoticeBody] = None,
+                    bid_notice_service: BidNoticeService = Depends(Provide[Container.bid_notice_service])) -> GetBidNoticeConstructionResponse:
+
+    total_count, bid_notices = bid_notice_service.get_bid_construction_list(body_data.page, body_data.per_page, props(body_data))
+    result_data = [BidConstructionVo(**b) for b in bid_notices ]
+    return GetBidNoticeConstructionResponse(total_count=total_count, data=result_data)
 

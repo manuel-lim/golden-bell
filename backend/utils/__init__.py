@@ -6,4 +6,10 @@ def is_builtin_instance(obj):
 def props(cls):
     return {i: v for i, v in cls.__dict__.items() if i[:1] != '_'}
 
-
+def integer(t):
+    try:
+        return int(t)
+    except TypeError:
+        return 0
+    except ValueError:
+        return 0

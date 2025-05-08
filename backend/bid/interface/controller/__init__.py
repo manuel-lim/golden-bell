@@ -3,7 +3,7 @@ from typing import Optional
 
 from backend.common import BidType
 from backend.bid.domain import Bid
-
+from backend.bid.domain.bid_construction import BidConstruction
 
 class BidNoticeBody(BaseModel):
     from_bdgt_amt: Optional[str] = None  # 최소 예산금액
@@ -25,14 +25,14 @@ class BidNoticeBody(BaseModel):
     unty_ntce_no: Optional[str] = None  # 통합공고번호
 
     bid_type: BidType = None  # 종류. 건설 / 외자 / 용역 / 물품
-
-
-class GetBidNoticeBody(BaseModel):
     page: int = 1
     per_page: int = 20
-    body: Optional[BidNoticeBody] = None
 
 
 class GetBidNoticeResponse(BaseModel):
     total_count: int
     data: Optional[list[Bid]] = None
+
+class GetBidNoticeConstructionResponse(BaseModel):
+    total_count: int
+    data: Optional[list[BidConstruction]] = None

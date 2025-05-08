@@ -2,6 +2,6 @@ from enum import StrEnum
 
 class BidType(StrEnum):
     CONSTRUCTION = 'construction'
-    IMPORTED = 'imported'
-    OUTSOURCING = 'outsourcing'
+    SERVICE = 'service'
+    FOREIGN_PROCUREMENT = 'foreign_procurement'
     PRODUCT = 'product'
