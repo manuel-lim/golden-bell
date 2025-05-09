@@ -112,3 +112,7 @@ class BidService(Bid):
     rbid_openg_dt: Optional[str] = None  # 재입찰개찰일시
     vat: Optional[str] = None  # 부가가치세
     induty_vat: Optional[str] = None  # 주공종부가가치세
+    pub_prcrmnt_lrgclsfc_nm: Optional[str] = None  # 공공조달대분류명
+    pub_prcrmnt_midclsfc_nm: Optional[str] = None  # 공공조달중분류명
+    pub_prcrmnt_clsfc_no: Optional[str] = None  # 공공조달분류번호
+    pub_prcrmnt_clsfc_nm: Optional[str] = None  # 공공조달분류명
