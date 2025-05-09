@@ -7,9 +7,6 @@ from backend.bid.domain import Bid
 from backend.bid.domain.bid_construction import BidConstruction
 
 class BidNoticeBody(BaseModel):
-    from_bdgt_amt: Optional[str] = None  # 최소 예산금액
-    to_bdgt_amt: Optional[str] = None  # 최대 예산금액
-
     bid_begin_dt: Optional[str] = None  # 입찰개시일시
     bid_clse_dt: Optional[str] = None  # 입찰마감일시
 
@@ -26,8 +23,16 @@ class BidNoticeBody(BaseModel):
     unty_ntce_no: Optional[str] = None  # 통합공고번호
 
     # bid_type: BidType = None  # 종류. 건설 / 외자 / 용역 / 물품
-    page: Optional[str] = '1'
-    per_page: Optional['int'] = '20'
+    page: Optional[int] = 1
+    per_page: Optional['int'] = 20
+
+    estimated_type: Optional[str] = 'base'
+    from_bdgt_amt: Optional[str] = None  # 최소 예산금액
+    to_bdgt_amt: Optional[str] = None  # 최대 예산금액
+
+    construction_id: Optional[str] = None
+    construction_name: Optional[str] = None
+    region_name: Optional[str] = None
 
 
 class GetBidNoticeResponse(BaseModel):

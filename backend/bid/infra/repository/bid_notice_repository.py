@@ -31,7 +31,7 @@ class BidNoticeRepository(IBidNoticeRepository):
                                    BidConstruction.bid_ntce_nm,  # 공사명
                                    BidMainIndustry.tmp_nm,  # 종목
                                    BidConstruction.cnstrtsite_rgn_nm, # 지역
-                                   BidConstruction.bdgt_amt,  # 기초금액
+                                   BidConstruction.bdgt_amt,  # 기초금액 / 예정금액
                                    BidConstruction.presmpt_prce,  # 추정가격
                                    BidConstruction.dminstt_nm,  # 발주처 TODO CHECK.
                                    # 현설일
@@ -44,6 +44,13 @@ class BidNoticeRepository(IBidNoticeRepository):
 
                                    BidBasePrice.rsrvtn_prce_rng_bgn_rate,  # 예가범위1
                                    BidBasePrice.rsrvtn_prce_rng_end_rate,  # 예가범위2
+                                   BidConstruction.sucsfbid_mthd_nm,  # 낙찰방법
+                                   BidConstruction.ntce_instt_nm,  # 발주기관
+                                   BidConstruction.ntce_instt_ofcl_nm,  # 담당자명
+                                   BidConstruction.ntce_instt_ofcl_tel_no,  # 담당자번호
+                                   BidConstruction.cntrct_cncls_mthd_nm,  # 계약방법
+                                   BidConstruction.contrctrcnstrtn_govsply_mtrl_amt,  # 도급자관금액
+                                   BidConstruction.govcnstrtn_govsply_mtrl_amt,  # 관급자관금액
                                    ).join(BidMainIndustry, BidConstruction.bid_ntce_no == BidMainIndustry.bid_ntce_no).join(BidBasePrice, BidConstruction.bid_ntce_no == BidBasePrice.bid_ntce_no)
 
             region_name = body_data.get('region_name', '')
