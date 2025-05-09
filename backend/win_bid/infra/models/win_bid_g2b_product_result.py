@@ -2,8 +2,9 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, Integer
 from backend.database import Base
 
-class WinBidG2BForeignProcurementResult(Base):
-    __tablename__ = 'win_bid_g2b_foreign_procurement_result'
+
+class WinBidG2BProductResult(Base):
+    __tablename__ = 'win_bid_g2b_product_result'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(11), comment='입찰공고번호')
