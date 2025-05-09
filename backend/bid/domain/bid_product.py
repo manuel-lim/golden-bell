@@ -103,3 +103,4 @@ class BidProduct(Bid):
     rbid_openg_dt: Optional[str] = None  # 재입찰개찰일시
     vat: Optional[str] = None  # 부가가치세
     induty_vat: Optional[str] = None  # 주공종부가가치세
+    bid_wgrntee_rcpt_clse_dt: Optional[str] = None

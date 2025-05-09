@@ -101,3 +101,4 @@ class BidG2BForeignProcurement(Bid):
     indstryty_lmt_yn: Optional[str] = None  # 업종제한여부
     chg_ntce_rsn: Optional[str] = None  # 변경공고사유
     rbid_openg_dt: Optional[str] = None  # 재입찰개찰일시
+    bid_wgrntee_rcpt_clse_dt: Optional[str] = None  # 입찰보증서접수마감일시
