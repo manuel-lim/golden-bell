@@ -1,7 +1,9 @@
 from pydantic import BaseModel
 from typing import Optional
+from dataclasses import dataclass
 
 
+@dataclass
 class WinBidProduct(BaseModel):
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
