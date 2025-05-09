@@ -14,10 +14,9 @@ router = APIRouter(prefix='/bid_notice')
 @router.get('/list')
 @inject
 def get_bid_notices(
-        body_data: Optional[BidNoticeBody] = None,
+        body_data: Optional[BidNoticeBody] = Depends(),
                     bid_notice_service: BidNoticeService = Depends(Provide[Container.bid_notice_service])) -> GetBidNoticeConstructionResponse:
 
     total_count, bid_notices = bid_notice_service.get_bid_construction_list(body_data.page, body_data.per_page, props(body_data))
-    result_data = [BidConstructionVo(**b) for b in bid_notices ]
-    return GetBidNoticeConstructionResponse(total_count=total_count, data=result_data)
+    return GetBidNoticeConstructionResponse(total_count=total_count, data=bid_notices)
 

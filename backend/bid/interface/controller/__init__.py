@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 
+from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
 from backend.common import BidType
 from backend.bid.domain import Bid
 from backend.bid.domain.bid_construction import BidConstruction
@@ -24,9 +25,9 @@ class BidNoticeBody(BaseModel):
     rgst_dt: Optional[str] = None  # 등록일시
     unty_ntce_no: Optional[str] = None  # 통합공고번호
 
-    bid_type: BidType = None  # 종류. 건설 / 외자 / 용역 / 물품
-    page: int = 1
-    per_page: int = 20
+    # bid_type: BidType = None  # 종류. 건설 / 외자 / 용역 / 물품
+    page: Optional[str] = '1'
+    per_page: Optional['int'] = '20'
 
 
 class GetBidNoticeResponse(BaseModel):
@@ -35,4 +36,4 @@ class GetBidNoticeResponse(BaseModel):
 
 class GetBidNoticeConstructionResponse(BaseModel):
     total_count: int
-    data: Optional[list[BidConstruction]] = None
+    data: Optional[list[BidConstructionDTO]] = None

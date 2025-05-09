@@ -4,6 +4,8 @@ from dependency_injector.wiring import inject
 from fastapi import HTTPException, status
 from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
 from backend.bid.domain.bid_construction import BidConstruction as BidNoticeConstructionVo
+from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
+
 
 class BidNoticeService:
     @inject
@@ -13,5 +15,5 @@ class BidNoticeService:
     def create_bid_notice(self):
         pass
 
-    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[dict]]:
+    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[BidConstructionDTO]]:
         return self.bid_notice_repository.get_bid_construction_list(page, per_page, body_data)

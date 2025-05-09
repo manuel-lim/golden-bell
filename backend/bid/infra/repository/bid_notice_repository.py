@@ -6,17 +6,18 @@ from backend.bid.infra.models.bid_main_industry import BidMainIndustry
 from backend.common import BidType
 from backend.database import SessionLocal
 from backend.bid.infra.models.bid_construction import BidConstruction
+from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
 from backend.bid.infra.models.bid_service import BidService
 from backend.bid.infra.models.bid_foreign_procurement import BidForeignProcurement
 from backend.bid.infra.models.bid_product import BidProduct
-from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
+
 from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
 from backend.utils.db_utils import row_to_dict
 from backend.utils import integer
 
 
 class BidNoticeRepository(IBidNoticeRepository):
-    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[BidConstructionVo]]:
+    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[BidConstructionDTO]]:
         """
         공사명, 종목, 지역, 기초금액/추정가격, 발주처, 현설일, 등록마감일, 협정마감일, 투찰시작일, 개찰일, 입력일, 대업종, 투찰률, 예가범위
         :param page:
@@ -72,5 +73,5 @@ class BidNoticeRepository(IBidNoticeRepository):
             offset = (page - 1) * per_page
             constructions = query.offset(offset).limit(per_page).all()
 
-            result = [BidConstructionVo(**row_to_dict(c)) for c in constructions]
+            result = [BidConstructionDTO(**row_to_dict(c)) for c in constructions]
             return total_count, result
