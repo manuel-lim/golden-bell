@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
 from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
-from backend.bid.infra.models.construction_base_price import BasePrice
+from backend.bid.infra.models.construction_base_price import ConstructionBasePrice
 from backend.bid.infra.models.main_industry import MainIndustry
 from backend.common import BidType
 from backend.database import SessionLocal
@@ -42,8 +42,8 @@ class BidNoticeRepository(IBidNoticeRepository):
                                    Construction.openg_dt,  # 개찰일
                                    Construction.rgst_dt,  # 입력일,
 
-                                   BasePrice.rsrvtn_prce_rng_bgn_rate,  # 예가범위1
-                                   BasePrice.rsrvtn_prce_rng_end_rate,  # 예가범위2
+                                   ConstructionBasePrice.rsrvtn_prce_rng_bgn_rate,  # 예가범위1
+                                   ConstructionBasePrice.rsrvtn_prce_rng_end_rate,  # 예가범위2
                                    Construction.sucsfbid_mthd_nm,  # 낙찰방법
                                    Construction.ntce_instt_nm,  # 발주기관
                                    Construction.ntce_instt_ofcl_nm,  # 담당자명
@@ -51,7 +51,7 @@ class BidNoticeRepository(IBidNoticeRepository):
                                    Construction.cntrct_cncls_mthd_nm,  # 계약방법
                                    Construction.contrctrcnstrtn_govsply_mtrl_amt,  # 도급자관금액
                                    Construction.govcnstrtn_govsply_mtrl_amt,  # 관급자관금액
-                                   ).join(MainIndustry, Construction.bid_ntce_no == MainIndustry.bid_ntce_no).join(BasePrice, Construction.bid_ntce_no == BasePrice.bid_ntce_no)
+                                   ).join(MainIndustry, Construction.bid_ntce_no == MainIndustry.bid_ntce_no).join(ConstructionBasePrice, Construction.bid_ntce_no == ConstructionBasePrice.bid_ntce_no)
 
             region_name = body_data.get('region_name', '')
             if region_name:
