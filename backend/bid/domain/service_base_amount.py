@@ -8,7 +8,7 @@ from backend.bid.domain import Bid
 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 용역의 기초금액정보 조회
 """
 @dataclass
-class BidServiceBaseAmount(Bid):
+class ServiceBaseAmount(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호

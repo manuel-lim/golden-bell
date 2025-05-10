@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional
-from backend.bid.domain.bid_product import BidProduct
+from backend.bid.domain.product import Product
 
 
 """
@@ -8,5 +8,5 @@ from backend.bid.domain.bid_product import BidProduct
 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함
 """
 @dataclass
-class BidG2BProduct(BidProduct):
+class BidG2BProduct(Product):
     pass

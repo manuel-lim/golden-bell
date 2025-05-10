@@ -8,7 +8,7 @@ from backend.bid.domain import Bid
 제한그룹번호, 제한순번, 면허제한명, 허용업종목록, 등록일시를 포함한 면허제한정보 조회
 """
 @dataclass
-class BidLicenseLimit(Bid):
+class LicenseLimit(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     lmt_grp_no: Optional[str] = None  # 제한그룹번호

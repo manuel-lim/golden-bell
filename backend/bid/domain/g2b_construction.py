@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from backend.bid.domain.bid_construction import BidConstruction
+from backend.bid.domain.construction import Construction
 
 
 """
@@ -7,5 +7,5 @@ from backend.bid.domain.bid_construction import BidConstruction
 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 공사부분의 입찰공고정보를 조회함
 """
 @dataclass
-class BidG2BConstruction(BidConstruction):
+class G2BConstruction(Construction):
     pass

@@ -9,7 +9,7 @@ from dataclasses import dataclass
 품명, 세부품명번호, 세부품명, 수량, 단위, 단가, 납품기한일시, 납품일수, 납품장소, 인도조건명 등 용역 구매대상물품 정보 조회
 """
 @dataclass
-class BidServiceProcurementItem(Bid):
+class ServicePurchaseItem(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호

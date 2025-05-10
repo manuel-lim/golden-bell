@@ -9,7 +9,7 @@ from backend.bid.domain import Bid
 """
 # 입찰가격산식A정보 조회
 @dataclass
-class BidAInfo(Bid):
+class AInfo(Bid):
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
     sfty_mngcst: Optional[str] = None

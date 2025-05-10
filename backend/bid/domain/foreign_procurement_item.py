@@ -8,7 +8,7 @@ from backend.bid.domain import Bid
 """
 
 @dataclass
-class BidForeignProcurementItem(Bid):
+class ForeignProcurementItem(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호

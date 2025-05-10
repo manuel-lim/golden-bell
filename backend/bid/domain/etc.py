@@ -7,7 +7,7 @@ from backend.bid.domain import Bid
 검색조건에 등록일시, 입찰공고번호를 입력하여 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 기타공고정보를 조회
 """
 @dataclass
-class BidEtc(Bid):
+class Etc(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     rgst_ty_nm: Optional[str] = None  # 등록유형명
