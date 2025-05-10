@@ -10,8 +10,8 @@ from backend.database import Base
 목록(입찰공고번호, 입찰공고명, 개찰일시, 참가업체수, 개찰업체정보, 진행구분코드명, 입력일시, 예비가격파일존재여부, 공고기관명, 수요기관명)을 조회
 """
 
-class OpenConstruction(Base):
-    __tablename__ = 'win_bid_open_construction'
+class ConstructionOpenResult(Base):
+    __tablename__ = 'win_bid_construction_open_result'
     __table_args__ = {'comment': '개찰결과 공사 목록 조회'}
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)

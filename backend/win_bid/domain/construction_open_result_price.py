@@ -11,7 +11,7 @@ from dataclasses import dataclass
 """
 
 @dataclass
-class OpenConstructionPrice(BaseModel):
+class ConstructionOpenResultPrice(BaseModel):
     id: Optional[int] = None  # 고유 ID (자동 증가)
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수

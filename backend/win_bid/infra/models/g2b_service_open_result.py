@@ -12,8 +12,8 @@ from backend.database import Base
 진행구분코드명, 입력일시, 예비가격파일존재여부, 공고기관명, 수요기관명)을 조회
 """
 
-class G2BServiceResult(Base):
-    __tablename__ = 'win_bid_g2b_service_result'
+class G2BServiceOpenResult(Base):
+    __tablename__ = 'win_bid_g2b_service_open_result'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(11), comment='입찰공고번호')

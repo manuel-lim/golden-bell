@@ -13,7 +13,7 @@ from pydantic import BaseModel
 """
 
 @dataclass
-class G2BServiceResult(BaseModel):
+class G2BServiceOpenResult(BaseModel):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호
