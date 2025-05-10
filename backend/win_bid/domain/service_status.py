@@ -3,7 +3,7 @@ from typing import Optional
 from dataclasses import dataclass
 
 @dataclass
-class ServiceStatusModel(BaseModel):
+class ServiceStatus(BaseModel):
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
     bid_clsfc_no: Optional[str] = None
