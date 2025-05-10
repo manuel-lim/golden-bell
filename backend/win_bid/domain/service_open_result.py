@@ -3,8 +3,15 @@ from typing import Optional
 from dataclasses import dataclass
 
 
+"""
+개찰결과 용역 목록 조회 /getOpengResultListInfoServc
+
+유찰, 개찰완료, 재입찰건에 대한 개찰결과를 제공하며 검색조건을 입력일시, 공고일시, 개찰일시, 입찰공고번호로하여 용역에 대한 나라장터 
+개찰결과 목록(입찰공고번호, 입찰공고명, 개찰일시, 참가업체수, 개찰업체정보, 진행구분코드명, 입력일시, 예비가격파일존재여부, 공고기관명, 수요기관명)을 조회
+"""
+
 @dataclass
-class OpenServiceStatus(BaseModel):
+class ServiceOpenResult(BaseModel):
     id: Optional[int] = None  # 고유 ID (자동 증가)
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
