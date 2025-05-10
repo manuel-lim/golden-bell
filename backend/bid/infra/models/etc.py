@@ -2,6 +2,12 @@ from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
+
+"""
+입찰공고목록 정보에 대한 기타공고조회 /getBidPblancListInfoEtc
+검색조건에 등록일시, 입찰공고번호를 입력하여 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 기타공고정보를 조회
+"""
+
 class Etc(Base):
     __tablename__ = 'bid_etc'
 

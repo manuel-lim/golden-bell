@@ -4,9 +4,12 @@ from backend.database import Base
 
 
 """
+입찰공고목록 정보에 대한 평가대상주력분야 조회 /getBidPblancListEvaluationIndstrytyMfrcInfo
+
 검색조건에 등록일시와 입찰공고번호를 입력하여 입찰 평가대상주력분야의 건산법적용여부, 건설업역상호진출가능여부, 건설업역구분코드, 낙찰자선정적용기준코드, 
 공종유형명, 공사대상업종명, 업종주력분야명, 추정금액, 추정가격, 부가가치세, 평가비율을 조회
 """
+
 class MainIndustry(Base):
     __tablename__ = 'bid_main_industry'
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

@@ -4,7 +4,10 @@ from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 """
-입찰공고목록 정보에 대한 외자 구매대상물품조회
+입찰공고목록 정보에 대한 외자 구매대상물품조회 /getBidPblancListInfoFrgcptPurchsObjPrdct
+
+검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, HSK번호, 
+세부품명번호, 세부품명, 수량, 단위, 배정금액, 배정금액통화 등 외자 구매대상물품 정보 조회
 """
 
 class ForeignProcurementItem(Base):

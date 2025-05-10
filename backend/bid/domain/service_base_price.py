@@ -4,11 +4,14 @@ from backend.bid.domain import Bid
 
 
 """
+입찰공고목록 정보에 대한 용역기초금액조회 /getBidPblancListInfoServcBsisAmount
+
 검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 
 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 용역의 기초금액정보 조회
 """
+
 @dataclass
-class ServiceBaseAmount(Bid):
+class ServiceBasePrice(Bid):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
     bid_ntce_ord: Optional[str] = None  # 입찰공고차수
     bid_clsfc_no: Optional[str] = None  # 입찰분류번호

@@ -4,6 +4,8 @@ from backend.bid.domain import Bid
 
 
 """
+입찰공고목록 정보에 대한 외자조회 /getBidPblancListInfoFrgcpt
+
 검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 
 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 외자부분의 입찰공고정보를 조회함
 """

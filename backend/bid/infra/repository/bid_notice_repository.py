@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
 from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
-from backend.bid.infra.models.base_price import BasePrice
+from backend.bid.infra.models.construction_base_price import BasePrice
 from backend.bid.infra.models.main_industry import MainIndustry
 from backend.common import BidType
 from backend.database import SessionLocal
