@@ -10,7 +10,7 @@ from backend.database import Base
 """
 
 class Service(Base):
-    __tablename__ = 'win_bid_service'
+    __tablename__ = 'win_bid_service_status'
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
