@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class WinBidOpenCompleted(BaseModel):
+class OpenCompleted(BaseModel):
     id: Optional[int] = None
     openg_rslt_div_nm: Optional[str] = None
     bid_ntce_no: Optional[str] = None

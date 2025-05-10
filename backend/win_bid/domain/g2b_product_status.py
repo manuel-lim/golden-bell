@@ -1,10 +1,10 @@
-from pydantic import BaseModel
-from typing import Optional
 from dataclasses import dataclass
+from typing import Optional
+from pydantic import BaseModel
 
 
 @dataclass
-class WinBidProduct(BaseModel):
+class G2BProductStatusModel(BaseModel):
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
     bid_clsfc_no: Optional[str] = None

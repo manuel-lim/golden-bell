@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class WinBidOpenForeignProcurementPrice(BaseModel):
+class OpenForeignProcurementPrice(BaseModel):
 
     id: Optional[int] = None
     bid_ntce_no: Optional[str] = None

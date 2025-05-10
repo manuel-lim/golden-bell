@@ -1,9 +1,11 @@
-from dataclasses import dataclass
-from typing import Optional
 from pydantic import BaseModel
+from typing import Optional
+from dataclasses import dataclass
+
 
 @dataclass
-class WinBidG2BConstructionResult(BaseModel):
+class ConstructionStatus(BaseModel):
+    id: Optional[int] = None
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
     bid_clsfc_no: Optional[str] = None
@@ -20,3 +22,4 @@ class WinBidG2BConstructionResult(BaseModel):
     dminstt_cd: Optional[str] = None
     dminstt_nm: Optional[str] = None
     openg_rslt_ntc_cntnts: Optional[str] = None
+    created_at: Optional[str] = None

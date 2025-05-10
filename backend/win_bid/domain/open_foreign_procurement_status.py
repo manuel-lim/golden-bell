@@ -3,7 +3,8 @@ from typing import Optional
 from dataclasses import dataclass
 
 @dataclass
-class WinBidProductStatus(BaseModel):
+class OpenForeignProcurementStatus(BaseModel):
+
     id: Optional[int] = None
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None

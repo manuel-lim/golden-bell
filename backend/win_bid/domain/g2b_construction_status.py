@@ -1,10 +1,10 @@
-from pydantic import BaseModel
-from typing import Optional
 from dataclasses import dataclass
+from typing import Optional
+from pydantic import BaseModel
 
 
 @dataclass
-class WinBidForeignProcurementStatusModel(BaseModel):
+class G2BConstructionStatusModel(BaseModel):
     bid_ntce_no: Optional[str] = None
     bid_ntce_ord: Optional[str] = None
     bid_clsfc_no: Optional[str] = None
@@ -25,4 +25,3 @@ class WinBidForeignProcurementStatusModel(BaseModel):
     rgst_dt: Optional[str] = None
     fnl_sucsf_date: Optional[str] = None
     fnl_sucsf_corp_ofcl: Optional[str] = None
-    created_at: Optional[str] = None
