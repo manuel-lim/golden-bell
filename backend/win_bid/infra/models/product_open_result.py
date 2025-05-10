@@ -3,8 +3,8 @@ from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
 
-class ProductStatus(Base):
-    __tablename__ = 'win_bid_product_status'
+class ProductOpenResult(Base):
+    __tablename__ = 'win_bid_product_open_result'
     __table_args__ = {'comment': '개찰결과 물품 목록 조회'}
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)

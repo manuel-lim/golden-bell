@@ -2,9 +2,15 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
+"""
+낙찰된 목록 현황 용역조회 /getScsbidListSttusServc
 
-class ServiceStatus(Base):
-    __tablename__ = 'win_bid_service_status'
+검색조건을 등록일시, 공고일시, 개찰일시, 입찰공고번호로 용역에 대한 나라장터 최종낙찰자 목록(입찰공고번호, 입찰공고명, 참가업체수, 
+최종낙찰업체명, 사업자번호, 최종낙찰률, 실개찰일시, 수요기관, 최종낙찰일, 최종낙찰업체담당자)을 조회
+"""
+
+class Service(Base):
+    __tablename__ = 'win_bid_service'
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
