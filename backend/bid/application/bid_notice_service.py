@@ -3,8 +3,8 @@ from typing import Optional
 from dependency_injector.wiring import inject
 from fastapi import HTTPException, status
 from backend.bid.domain.repository.bid_notice_repository import IBidNoticeRepository
-from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
-from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
+from backend.bid.domain.construction import Construction as BidConstructionVo
+from backend.bid.domain.dto.construction_dto import BidConstructionDTO
 
 
 

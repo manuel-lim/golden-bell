@@ -8,7 +8,7 @@ from backend.database import Base
 나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 공사부분의 입찰공고정보를 조회함
 """
 
-class BidConstruction(Base):
+class Construction(Base):
     __tablename__ = 'bid_construction'
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')

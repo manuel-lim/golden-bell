@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
+from backend.bid.domain.dto.construction_dto import BidConstructionDTO
 
 
 class IBidNoticeRepository(metaclass=ABCMeta):

@@ -1,16 +1,15 @@
 from sqlalchemy import Column
-from sqlalchemy.orm import DeclarativeBase, mapped_column
+from sqlalchemy.orm import mapped_column
 from sqlalchemy.types import String, Integer, Text
 from backend.database import Base
 
 
 """
 검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 
-나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함
+나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 외자부분의 입찰공고정보를 조회함
 """
-
-class BidProduct(Base):
-    __tablename__ = 'bid_product'
+class ForeignProcurement(Base):
+    __tablename__ = 'bid_foreign_procurement'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
@@ -74,6 +73,7 @@ class BidProduct(Base):
     bid_prtcpt_fee = mapped_column(String(21), comment='입찰참가수수료')
     bid_grntymny_paymnt_yn = mapped_column(String(30), comment='입찰보증금납부여부')
     crdtr_nm = mapped_column(String(200), comment='채권자명')
+    prdct_sno = mapped_column(String(6), comment='물품순번')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
     prdct_spec_nm = mapped_column(Text, comment='물품규격명')
@@ -97,7 +97,6 @@ class BidProduct(Base):
     sucsfbid_lwlt_rate = mapped_column(String(22), comment='낙찰하한율')
     rgst_dt = mapped_column(String(19), comment='등록일시')
     bf_spec_rgst_no = mapped_column(String(50), comment='사전규격등록번호')
-    info_biz_yn = mapped_column(String(1), comment='정보화사업여부')
     sucsfbid_mthd_cd = mapped_column(String(9), comment='낙찰방법코드')
     sucsfbid_mthd_nm = mapped_column(String(200), comment='낙찰방법명')
     chg_dt = mapped_column(String(19), comment='변경일시')
@@ -105,8 +104,4 @@ class BidProduct(Base):
     indstryty_lmt_yn = mapped_column(String(1), comment='업종제한여부')
     chg_ntce_rsn = mapped_column(String(4000), comment='변경공고사유')
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')
-    vat = mapped_column(String(25), comment='부가가치세')
-    induty_vat = mapped_column(String(25), comment='주공종부가가치세')
     bid_wgrntee_rcpt_clse_dt = mapped_column(String(50), comment='입찰보증서접수마감일시')
-    rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
-    rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')

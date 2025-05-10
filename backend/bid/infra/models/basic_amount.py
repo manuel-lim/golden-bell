@@ -7,7 +7,7 @@ from backend.database import Base
 검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 
 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등 물품의 기초금액정보 조회
 """
-class BidBasicAmount(Base):
+class BasicAmount(Base):
     __tablename__ = 'bid_basic_amount'
 
     id = mapped_column(Integer, primary_key=True)

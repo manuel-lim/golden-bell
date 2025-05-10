@@ -2,7 +2,7 @@ from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
-class BidEtc(Base):
+class Etc(Base):
     __tablename__ = 'bid_etc'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

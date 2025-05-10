@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends
 from backend.bid.application.bid_notice_service import BidNoticeService
 from backend.bid.interface.controller import BidNoticeBody, GetBidNoticeResponse, BidNoticeBody, GetBidNoticeConstructionResponse
 from backend.containers import Container
-from backend.bid.domain.bid_construction import BidConstruction as BidConstructionVo
+from backend.bid.domain.construction import Construction as BidConstructionVo
 from backend.utils import props
 
 router = APIRouter(prefix='/bid_notice')

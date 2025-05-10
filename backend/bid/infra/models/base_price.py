@@ -5,10 +5,10 @@ from backend.database import Base
 
 """
 검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 
-예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 용역의 기초금액정보 조회
+예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 공사의 기초금액정보 조회
 """
-class BidServiceBaseAmount(Base):
-    __tablename__ = 'bid_service_base_amount'
+class BasePrice(Base):
+    __tablename__ = 'bid_base_price'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
@@ -37,3 +37,7 @@ class BidServiceBaseAmount(Base):
     useful_amt = mapped_column(String(21), comment='가용금액')
     inpt_dt = mapped_column(String(19), comment='입력일시')
     sfty_chck_mngcst = mapped_column(String(17), comment='안전관리비')
+    bid_prce_calcl_a_yn = mapped_column(String(1), comment='입찰가격산식A여부')
+    bss_amt_purcnstcst = mapped_column(String(22), comment='기초금액순공사비')
+    qlty_mngcst = mapped_column(String(22), comment='품질관리비')
+    qlty_mngcst_a_obj_yn = mapped_column(String(1), comment='품질관리비A적용대상여부')

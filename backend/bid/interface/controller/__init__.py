@@ -1,10 +1,10 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 
-from backend.bid.domain.dto.bid_construction_dto import BidConstructionDTO
+from backend.bid.domain.dto.construction_dto import BidConstructionDTO
 from backend.common import BidType
 from backend.bid.domain import Bid
-from backend.bid.domain.bid_construction import BidConstruction
+from backend.bid.domain.construction import Construction
 
 class BidNoticeBody(BaseModel):
     bid_begin_dt: Optional[str] = None  # 입찰개시일시

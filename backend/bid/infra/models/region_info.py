@@ -6,7 +6,7 @@ from backend.database import Base
 """
 검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 제한그룹번호, 참가가능지역명, 등록일시 등 참가가능지역정보조회
 """
-class BidRegionInfo(Base):
+class RegionInfo(Base):
     __tablename__ = 'bid_region_info'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

@@ -1,15 +1,15 @@
 from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import String, Text, Integer
-
 from backend.database import Base
 
 
 """
-검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, 물품분류번호, 
-품명, 세부품명번호, 세부품명, 수량, 단위, 단가, 납품기한일시, 납품일수, 납품장소, 인도조건명 등 물품 구매대상물품 정보 조회
+검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 
+입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, 물품분류번호, 
+품명, 세부품명번호, 세부품명, 수량, 단위, 단가, 납품기한일시, 납품일수, 납품장소, 인도조건명 등 용역 구매대상물품 정보 조회
 """
-class BidProductPurchaseItem(Base):
-    __tablename__ = 'bid_product_purchase_item'
+class ServicePurchaseItem(Base):
+    __tablename__ = 'bid_service_purchase_item'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')

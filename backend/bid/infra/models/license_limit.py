@@ -7,7 +7,7 @@ from backend.database import Base
 검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 
 제한그룹번호, 제한순번, 면허제한명, 허용업종목록, 등록일시를 포함한 면허제한정보 조회
 """
-class BidLicenseLimit(Base):
+class LicenseLimit(Base):
     __tablename__ = 'bid_license_limit'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

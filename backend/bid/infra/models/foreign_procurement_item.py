@@ -7,7 +7,7 @@ from backend.database import Base
 입찰공고목록 정보에 대한 외자 구매대상물품조회
 """
 
-class BidForeignProcurementItem(Base):
+class ForeignProcurementItem(Base):
     __tablename__ = 'bid_foreign_procurement_item'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

@@ -11,7 +11,7 @@ from backend.database import Base
 공동수급구성방식코드, 입찰계약방법코드, 공동수급구성방식,실적신청서접수일시, 공고명, 재입찰허용여부, 실적신청서접수방법코드,예가방법구분코드, 
 집행관코드, 추첨복수예가개수, 배정예산금액,총예가개수, 추정가격, 내역입찰여부, 지사투찰허용여부
 """
-class BidProductHistory(Base):
+class ProductHistory(Base):
     __tablename__ = 'bid_product_history'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

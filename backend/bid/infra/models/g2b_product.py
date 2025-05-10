@@ -1,15 +1,14 @@
-from sqlalchemy import Column
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.types import String, Integer, Text
+from sqlalchemy.orm import DeclarativeBase, mapped_column
+from sqlalchemy import String, Text, Integer
 from backend.database import Base
 
 
 """
-검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 
-나라장터의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 외자부분의 입찰공고정보를 조회함
+검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터의 
+입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함
 """
-class BidForeignProcurement(Base):
-    __tablename__ = 'bid_foreign_procurement'
+class G2BProduct(Base):
+    __tablename__ = 'bid_g2b_product'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
@@ -38,16 +37,16 @@ class BidForeignProcurement(Base):
     bid_begin_dt = mapped_column(String(19), comment='입찰개시일시')
     bid_clse_dt = mapped_column(String(19), comment='입찰마감일시')
     openg_dt = mapped_column(String(19), comment='개찰일시')
-    ntce_spec_doc_url1 = mapped_column(String(800), comment='공고규격서URL1')
-    ntce_spec_doc_url2 = mapped_column(String(800), comment='공고규격서URL2')
-    ntce_spec_doc_url3 = mapped_column(String(800), comment='공고규격서URL3')
-    ntce_spec_doc_url4 = mapped_column(String(800), comment='공고규격서URL4')
-    ntce_spec_doc_url5 = mapped_column(String(800), comment='공고규격서URL5')
-    ntce_spec_doc_url6 = mapped_column(String(800), comment='공고규격서URL6')
-    ntce_spec_doc_url7 = mapped_column(String(800), comment='공고규격서URL7')
-    ntce_spec_doc_url8 = mapped_column(String(800), comment='공고규격서URL8')
-    ntce_spec_doc_url9 = mapped_column(String(800), comment='공고규격서URL9')
-    ntce_spec_doc_url10 = mapped_column(String(800), comment='공고규격서URL10')
+    ntce_spec_doc_url1 = mapped_column(Text, comment='공고규격서URL1')
+    ntce_spec_doc_url2 = mapped_column(Text, comment='공고규격서URL2')
+    ntce_spec_doc_url3 = mapped_column(Text, comment='공고규격서URL3')
+    ntce_spec_doc_url4 = mapped_column(Text, comment='공고규격서URL4')
+    ntce_spec_doc_url5 = mapped_column(Text, comment='공고규격서URL5')
+    ntce_spec_doc_url6 = mapped_column(Text, comment='공고규격서URL6')
+    ntce_spec_doc_url7 = mapped_column(Text, comment='공고규격서URL7')
+    ntce_spec_doc_url8 = mapped_column(Text, comment='공고규격서URL8')
+    ntce_spec_doc_url9 = mapped_column(Text, comment='공고규격서URL9')
+    ntce_spec_doc_url10 = mapped_column(Text, comment='공고규격서URL10')
     ntce_spec_file_nm1 = mapped_column(String(256), comment='공고규격파일명1')
     ntce_spec_file_nm2 = mapped_column(String(256), comment='공고규격파일명2')
     ntce_spec_file_nm3 = mapped_column(String(256), comment='공고규격파일명3')
@@ -67,13 +66,12 @@ class BidForeignProcurement(Base):
     asign_bdgt_amt = mapped_column(String(25), comment='배정예산금액')
     presmpt_prce = mapped_column(String(25), comment='추정가격')
     openg_plce = mapped_column(String(100), comment='개찰장소')
-    bid_ntce_dtl_url = mapped_column(String(512), comment='입찰공고상세URL')
-    bid_ntce_url = mapped_column(String(500), comment='입찰공고URL')
+    bid_ntce_dtl_url = mapped_column(Text, comment='입찰공고상세URL')
+    bid_ntce_url = mapped_column(Text, comment='입찰공고URL')
     bid_prtcpt_fee_paymnt_yn = mapped_column(String(30), comment='입찰참가수수료납부여부')
     bid_prtcpt_fee = mapped_column(String(21), comment='입찰참가수수료')
     bid_grntymny_paymnt_yn = mapped_column(String(30), comment='입찰보증금납부여부')
     crdtr_nm = mapped_column(String(200), comment='채권자명')
-    prdct_sno = mapped_column(String(6), comment='물품순번')
     dtil_prdct_clsfc_no = mapped_column(String(10), comment='세부품명번호')
     dtil_prdct_clsfc_no_nm = mapped_column(String(200), comment='세부품명')
     prdct_spec_nm = mapped_column(Text, comment='물품규격명')
@@ -83,7 +81,7 @@ class BidForeignProcurement(Base):
     dlvr_tmlmt_dt = mapped_column(String(19), comment='납품기한일시')
     dlvr_daynum = mapped_column(String(5), comment='납품일수')
     dlvry_cndtn_nm = mapped_column(String(200), comment='인도조건명')
-    purchs_obj_prdct_list = mapped_column(String(4000), comment='구매대상물품목록')
+    purchs_obj_prdct_list = mapped_column(Text, comment='구매대상물품목록')
     unty_ntce_no = mapped_column(String(50), comment='통합공고번호')
     cmmn_spldmd_methd_cd = mapped_column(String(15), comment='공동수급방식코드')
     cmmn_spldmd_methd_nm = mapped_column(String(100), comment='공동수급방식명')
@@ -97,11 +95,16 @@ class BidForeignProcurement(Base):
     sucsfbid_lwlt_rate = mapped_column(String(22), comment='낙찰하한율')
     rgst_dt = mapped_column(String(19), comment='등록일시')
     bf_spec_rgst_no = mapped_column(String(50), comment='사전규격등록번호')
+    info_biz_yn = mapped_column(String(1), comment='정보화사업여부')
     sucsfbid_mthd_cd = mapped_column(String(9), comment='낙찰방법코드')
     sucsfbid_mthd_nm = mapped_column(String(200), comment='낙찰방법명')
     chg_dt = mapped_column(String(19), comment='변경일시')
     dminstt_ofcl_email_adrs = mapped_column(String(100), comment='수요기관담당자이메일주소')
     indstryty_lmt_yn = mapped_column(String(1), comment='업종제한여부')
-    chg_ntce_rsn = mapped_column(String(4000), comment='변경공고사유')
+    chg_ntce_rsn = mapped_column(Text, comment='변경공고사유')
     rbid_openg_dt = mapped_column(String(19), comment='재입찰개찰일시')
-    bid_wgrntee_rcpt_clse_dt = mapped_column(String(50), comment='입찰보증서접수마감일시')
+    vat = mapped_column(String(25), comment='부가가치세')
+    induty_vat = mapped_column(String(25), comment='주공종부가가치세')
+    bid_wgrntee_rcpt_clse_dt = mapped_column(String(25), comment='입찰보증서접수마감일시')
+    rgn_lmt_bid_locplc_jdgm_bss_cd = mapped_column(String(1), comment='')
+    rgn_lmt_bid_locplc_jdgm_bss_nm = mapped_column(String(50), comment='')
