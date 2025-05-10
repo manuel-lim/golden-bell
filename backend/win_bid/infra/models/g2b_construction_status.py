@@ -1,12 +1,13 @@
 from sqlalchemy.orm import mapped_column
-from sqlalchemy import String, BigInteger, DateTime, text
+from sqlalchemy import String, Integer
 from backend.database import Base
 
 
-class WinBidForeignProcurementStatus(Base):
-    __tablename__ = 'win_bid_foreign_procurement_status'
 
-    id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+class G2BConstructionStatus(Base):
+    __tablename__ = 'win_bid_g2b_construction_status'
+
+    id = mapped_column(primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')
@@ -27,4 +28,3 @@ class WinBidForeignProcurementStatus(Base):
     rgst_dt = mapped_column(String(19), comment='등록일시')
     fnl_sucsf_date = mapped_column(String(10), comment='최종낙찰일자')
     fnl_sucsf_corp_ofcl = mapped_column(String(35), comment='최종낙찰업체담당자')
-    created_at = mapped_column(DateTime, server_default=text('CURRENT_TIMESTAMP'))

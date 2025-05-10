@@ -1,11 +1,13 @@
 from sqlalchemy.orm import mapped_column
-from sqlalchemy import String, Integer
+from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
-class WinBidG2BForeignProcurementResult(Base):
-    __tablename__ = 'win_bid_g2b_foreign_procurement_result'
 
-    id = mapped_column(Integer, primary_key=True, autoincrement=True)
+class OpenForeignProcurementStatus(Base):
+    __tablename__ = 'win_bid_open_foreign_procurement_status'
+    __table_args__ = {'comment': '개찰결과 외자 목록 조회'}
+
+    id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(11), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')
@@ -22,3 +24,4 @@ class WinBidG2BForeignProcurementResult(Base):
     dminstt_cd = mapped_column(String(7), comment='수요기관코드')
     dminstt_nm = mapped_column(String(200), comment='수요기관명')
     openg_rslt_ntc_cntnts = mapped_column(String(4000), comment='개찰결과공지내용')
+    created_at = mapped_column(DateTime, server_default=text('CURRENT_TIMESTAMP'))

@@ -2,7 +2,7 @@ from sqlalchemy import String, Integer
 from sqlalchemy.orm import mapped_column
 from backend.database import Base
 
-class WinBidRebid(Base):
+class Rebid(Base):
     __tablename__ = 'win_bid_rebid'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

@@ -3,7 +3,7 @@ from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
 
-class WinBidOpenCompleted(Base):
+class OpenCompleted(Base):
     __tablename__ = 'win_bid_open_completed'
     __table_args__ = {'comment': '개찰결과 개찰완료 목록 조회'}
 

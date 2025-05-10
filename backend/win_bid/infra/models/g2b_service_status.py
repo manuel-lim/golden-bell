@@ -1,12 +1,16 @@
 from sqlalchemy.orm import mapped_column
-from sqlalchemy import String, BigInteger, DateTime, text
+from sqlalchemy import String, Integer
 from backend.database import Base
 
+"""
+나라장터 검색조건에 의한 낙찰된 목록 현황 용역조회
+검색조건을 공고일시, 개찰일시, 입찰공고번호, 입찰공고명, 공고기관코드, 공고기관명, 수요기관코드, 수요기관명, 참조번호, 참가제한지역코드, 참가제한지역명, 업종코드, 업종명, 추정가격시작, 추정가격종료, 세부품명번호, 다수공급경쟁자여부, 조달요청번호, 국제구분코드로 용역에 대한 나라장터 최종낙찰자 목록(입찰공고번호, 입찰공고명, 참가업체수, 최종낙찰업체명, 사업자번호, 최종낙찰률, 실개찰일시, 수요기관)을 조회
+"""
 
-class WinBidServiceStatus(Base):
-    __tablename__ = 'win_bid_service_status'
+class G2BServiceStatus(Base):
+    __tablename__ = 'win_bid_g2b_service_status'
 
-    id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')
@@ -27,4 +31,3 @@ class WinBidServiceStatus(Base):
     rgst_dt = mapped_column(String(19), comment='등록일시')
     fnl_sucsf_date = mapped_column(String(10), comment='최종낙찰일자')
     fnl_sucsf_corp_ofcl = mapped_column(String(35), comment='최종낙찰업체담당자')
-    created_at = mapped_column(DateTime, server_default=text('CURRENT_TIMESTAMP'))

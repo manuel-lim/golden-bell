@@ -3,7 +3,7 @@ from sqlalchemy import String, Integer
 from backend.database import Base
 
 
-class WinBidG2BForeignProcurementStatus(Base):
+class G2BForeignProcurementStatus(Base):
     __tablename__ = 'win_bid_g2b_foreign_procurement_status'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)

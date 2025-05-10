@@ -1,11 +1,12 @@
 from sqlalchemy.orm import mapped_column
-from sqlalchemy import String, BigInteger, DateTime
+from sqlalchemy import String, Integer
 from backend.database import Base
 
-class WinBidConstructionStatus(Base):
-    __tablename__ = 'win_bid_construction_status'
 
-    id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+class G2BProductStatus(Base):
+    __tablename__ = 'win_bid_g2b_product_status'
+
+    id = mapped_column(primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment='입찰공고번호')
     bid_ntce_ord = mapped_column(String(3), comment='입찰공고차수')
     bid_clsfc_no = mapped_column(String(5), comment='입찰분류번호')

@@ -8,7 +8,7 @@ from backend.database import Base
 사업자번호, 최종낙찰률, 실개찰일시, 수요기관, 최종낙찰일, 최종낙찰업체담당자)을 조회
 """
 
-class WinBidProduct(Base):
+class Product(Base):
     __tablename__ = 'win_bid_product'
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(40), comment="입찰공고번호")

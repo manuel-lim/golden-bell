@@ -3,9 +3,9 @@ from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
 
-class WinBidOpenServicePrice(Base):
-    __tablename__ = 'win_bid_open_service_price'
-    __table_args__ = {'comment': '개찰결과 용역 예비가격상세 목록 조회'}
+class OpenConstructionPrice(Base):
+    __tablename__ = 'win_bid_open_construction_price'
+    __table_args__ = {'comment': '개찰결과 공사 예비가격상세 목록 조회'}
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
 

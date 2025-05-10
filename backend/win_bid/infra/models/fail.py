@@ -3,7 +3,7 @@ from sqlalchemy import String, Integer
 from backend.database import Base
 
 
-class WinBidFail(Base):
+class Fail(Base):
     __tablename__ = 'win_bid_fail'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
