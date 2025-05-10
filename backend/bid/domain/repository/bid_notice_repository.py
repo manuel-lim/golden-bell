@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from backend.bid.domain.dto.construction_dto import BidConstructionDTO
+from backend.bid.domain.dto.construction_dto import ConstructionDTO
 
 
 class IBidNoticeRepository(metaclass=ABCMeta):
@@ -8,5 +8,5 @@ class IBidNoticeRepository(metaclass=ABCMeta):
     #     raise NotImplementedError
 
     @abstractmethod
-    def get_bid_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[BidConstructionDTO]]:
+    def get_construction_list(self, page, per_page, body_data: dict) -> tuple[int, list[ConstructionDTO]]:
         raise NotImplementedError

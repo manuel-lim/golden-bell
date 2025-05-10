@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 
-from backend.bid.domain.dto.construction_dto import BidConstructionDTO
+from backend.bid.domain.dto.construction_dto import ConstructionDTO
 from backend.common import BidType
 from backend.bid.domain import Bid
 from backend.bid.domain.construction import Construction
@@ -41,4 +41,4 @@ class GetBidNoticeResponse(BaseModel):
 
 class GetBidNoticeConstructionResponse(BaseModel):
     total_count: int
-    data: Optional[list[BidConstructionDTO]] = None
+    data: Optional[list[ConstructionDTO]] = None
