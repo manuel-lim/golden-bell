@@ -3,6 +3,13 @@ from typing import Optional
 from dataclasses import dataclass
 
 
+"""
+낙찰된 목록 현황 외자조회 /getScsbidListSttusFrgcpt
+
+검색조건을 등록일시, 공고일시, 개찰일시, 입찰공고번호로 외자에 대한 나라장터 최종낙찰자 목록
+(입찰공고번호, 입찰공고명, 참가업체수, 최종낙찰업체명, 사업자번호, 최종낙찰률, 실개찰일시, 수요기관, 최종낙찰일, 최종낙찰업체담당자)을 조회
+"""
+
 @dataclass
 class ForeignProcurementStatus(BaseModel):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호

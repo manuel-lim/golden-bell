@@ -2,6 +2,13 @@ from pydantic import BaseModel
 from typing import Optional
 from dataclasses import dataclass
 
+"""
+개찰결과 개찰완료 목록 조회 /getOpengResultListInfoOpengCompt
+
+물품, 공사, 용역, 외자의 개찰완료된 건에 대하여 최종낙찰업체 및 투찰업체의 개찰순위 정보를 제공하며 검색조건을 입찰공고번호하여 나라장터 개찰결과 
+개찰완료 목록(개찰결과구분명, 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 개찰순위, 최종낙찰업체사업자등록번호, 최종낙찰업체명, 최종낙찰업체대표자명, 
+투찰금액, 투찰룰, 비고, 공종별입찰금액URL), 추첨번호1, 추첨번호2, 투찰일시 등 개찰완료 조회
+"""
 
 @dataclass
 class OpenCompleted(BaseModel):

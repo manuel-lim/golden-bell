@@ -3,6 +3,13 @@ from typing import Optional
 from dataclasses import dataclass
 
 
+"""
+개찰결과 물품 예비가격상세 목록 조회 /getOpengResultListInfoThngPreparPcDetail
+
+검색조건을 입력일시, 입찰공고번호로 물품에 대한 나라장터 개찰결과 예비가격상세 목록(입찰공고번호, 입찰공고명, 예정가격, 기초금액, 총예가건수, 
+복수예가순번, 기초예정가격, 추첨여부, 추첨횟수, 실개찰일시, 기초금액기준상위건수, 복수예비가격작성일시, 입력일시)을 조회
+"""
+
 @dataclass
 class OpenProductPrice(BaseModel):
     id: Optional[int] = None  # 고유 ID (자동 증가)

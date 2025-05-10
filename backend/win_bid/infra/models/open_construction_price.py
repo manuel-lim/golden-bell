@@ -2,6 +2,12 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, BigInteger, DateTime, text
 from backend.database import Base
 
+"""
+개찰결과 공사 예비가격상세 목록 조회 /getOpengResultListInfoCnstwkPreparPcDetail
+
+검색조건을 등록일시, 입찰공고번호로 공사에 대한 나라장터 개찰결과 예비가격상세 목록(입찰공고번호, 입찰공고명, 예정가격, 기초금액, 총예가건수, 
+복수예가순번, 기초예정가격, 추첨여부, 추첨횟수, 실개찰일시, 기초금액기준상위건수, 복수예비가격작성일시, 입력일시)을 조회
+"""
 
 class OpenConstructionPrice(Base):
     __tablename__ = 'win_bid_open_construction_price'

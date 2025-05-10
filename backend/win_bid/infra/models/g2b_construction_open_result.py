@@ -2,9 +2,17 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, Integer
 from backend.database import Base
 
+"""
+나라장터 검색조건에 의한 개찰결과 공사 목록 조회 /getOpengResultListInfoCnstwkPPSSrch
 
-class G2BProductResult(Base):
-    __tablename__ = 'win_bid_g2b_product_result'
+유찰, 개찰완료, 재입찰건에 대한 개찰결과를 제공하며 검색조건을 공고일시, 개찰일시, 입찰공고번호, 입찰공고명, 공고기관코드, 공고기관명, 수요기관코드, 
+수요기관명, 참조번호, 참가제한지역코드, 참가제한지역명, 업종코드, 업종명, 추정가격시작, 추정가격종료, 세부품명번호, 다수공급경쟁자여부, 조달요청번호, 
+국제구분코드로 하여 공사에 대한 나라장터 개찰결과 목록(입찰공고번호, 입찰공고명, 개찰일시, 참가업체수, 개찰업체정보, 진행구분코드명, 입력일시, 
+예비가격파일존재여부, 공고기관명, 수요기관명)을 조회
+"""
+
+class G2BConstructionOpenResult(Base):
+    __tablename__ = 'win_bid_g2b_construction_open_result'
 
     id = mapped_column(Integer, primary_key=True, autoincrement=True)
     bid_ntce_no = mapped_column(String(11), comment='입찰공고번호')

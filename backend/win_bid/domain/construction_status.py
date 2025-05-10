@@ -3,6 +3,13 @@ from typing import Optional
 from dataclasses import dataclass
 
 
+"""
+낙찰된 목록 현황 공사조회 /getScsbidListSttusCnstwk
+
+검색조건을 등록일시, 공고일시, 개찰일시, 입찰공고번호로 공사에대한 나라장터 최종낙찰자 목록(입찰공고번호, 입찰공고명, 참가업체수, 최종낙찰업체명, 사업자번호,
+최종낙찰률, 실개찰일시, 수요기관, 최종낙찰일, 최종낙찰업체담당자)을 조회
+"""
+
 @dataclass
 class ConstructionStatus(BaseModel):
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
@@ -25,4 +32,4 @@ class ConstructionStatus(BaseModel):
     rgst_dt: Optional[str] = None  # 등록일시
     fnl_sucsf_date: Optional[str] = None  # 최종낙찰일자
     fnl_sucsf_corp_ofcl: Optional[str] = None  # 최종낙찰업체담당자
-    created_at: Optional[str] = None  # 생성일시 (원본 ORM에는 없음)
+    created_at: Optional[str] = None  # 생성일시
