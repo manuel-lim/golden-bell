@@ -11,8 +11,8 @@ from backend.database import Base
 투찰금액, 투찰룰, 비고, 공종별입찰금액URL), 추첨번호1, 추첨번호2, 투찰일시 등 개찰완료 조회
 """
 
-class OpenCompleted(Base):
-    __tablename__ = 'win_bid_open_completed'
+class OpenResultCompleted(Base):
+    __tablename__ = 'win_bid_open_result_completed'
     __table_args__ = {'comment': '개찰결과 개찰완료 목록 조회'}
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)

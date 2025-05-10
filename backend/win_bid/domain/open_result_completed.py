@@ -11,7 +11,7 @@ from dataclasses import dataclass
 """
 
 @dataclass
-class OpenCompleted(BaseModel):
+class OpenResultCompleted(BaseModel):
     id: Optional[int] = None  # 고유 ID (자동 증가)
     openg_rslt_div_nm: Optional[str] = None  # 개찰결과구분명
     bid_ntce_no: Optional[str] = None  # 입찰공고번호
