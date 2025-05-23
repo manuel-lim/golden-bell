@@ -9,7 +9,7 @@ from backend.database import Base
 최종낙찰업체명, 사업자번호, 최종낙찰률, 실개찰일시, 수요기관, 최종낙찰일, 최종낙찰업체담당자)을 조회
 """
 
-class Service(Base):
+class ServiceStatus(Base):
     __tablename__ = 'win_bid_service_status'
 
     id = mapped_column(BigInteger, primary_key=True, autoincrement=True)
